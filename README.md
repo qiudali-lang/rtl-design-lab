@@ -1,6 +1,6 @@
-# Digital IC RTL Practice
+# RTL Design Lab
 
-This repository is Lucas's independent RTL practice workspace for Digital IC / RTL design preparation.
+This repository is Lucas's independent Verilog RTL design lab for Digital IC / RTL design preparation.
 
 It is intentionally separated from USC course files and private resume evidence. Public code in this repository should be independently written practice RTL, self-checking testbenches, and safe study notes only.
 
@@ -64,4 +64,4 @@ Each completed module should include:
 
 Do not upload course-provided code, testbenches, handouts, PDFs, EDA databases, private server files, credentials, or personal resume evidence.
 
-Public uploads should contain only clean independent practice work.
+Public uploads should contain only clean independent RTL design and verification work.
