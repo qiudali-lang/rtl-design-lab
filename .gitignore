@@ -1,0 +1,62 @@
+# Temporary workspaces
+tmp/
+outputs/
+work/
+
+# Simulation outputs
+sim/**/work/
+sim/**/*.wlf
+sim/**/*.vcd
+sim/**/*.vvp
+sim/**/transcript
+*.wlf
+*.vcd
+*.vvp
+*.fst
+*.ghw
+*.log
+
+# Questa / ModelSim generated files
+work/
+transcript
+vsim.wlf
+*.qdb
+*.qpg
+*.qtl
+*.mpf
+
+# Cadence / EDA generated databases and lock files
+*.oa
+*.oa-
+*.cdslck
+*.sdb
+*.rdb
+CDS.log*
+maestro/
+psf/
+simulation/
+netlist/
+
+# Course/private documents should not be committed here
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# Secrets and private environment files
+.ssh/
+.vnc/
+.pki/
+.mozilla/
+known_hosts
+*passwd*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
