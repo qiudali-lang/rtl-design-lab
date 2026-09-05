@@ -1,0 +1,37 @@
+[
+  {
+    "configuration": "A_no_cache_DDR3",
+    "sim_instructions": 16799953,
+    "sim_seconds": 1.398545,
+    "sim_mips": 12.012450797078394,
+    "source_sha256": "58eb59dcfdd205825de0bfa988054c914544742bc474febc6b982344eb175b5f"
+  },
+  {
+    "configuration": "B_one_level_cache",
+    "sim_instructions": 16799953,
+    "sim_seconds": 0.173418,
+    "sim_mips": 96.87548582038774,
+    "source_sha256": "9baca63a81d5aec8a3a492f0f31efe7f1beab534df46f58a71cfabefd704242d"
+  },
+  {
+    "configuration": "C_two_level_cache",
+    "sim_instructions": 16799953,
+    "sim_seconds": 0.107585,
+    "sim_mips": 156.1551610354603,
+    "source_sha256": "bafdcbb1e76d8efd6de210b424feb68b5509bd35534528036c4ffb839ac3d2ad"
+  },
+  {
+    "configuration": "D_three_level_cache",
+    "sim_instructions": 16799953,
+    "sim_seconds": 0.107739,
+    "sim_mips": 155.93195593053582,
+    "source_sha256": "7832e017c7cede0969ed69d652da3e98f69b66dc80280789130163aa014b6667"
+  },
+  {
+    "configuration": "E_no_cache_LPDDR2",
+    "sim_instructions": 16799953,
+    "sim_seconds": 1.553722,
+    "sim_mips": 10.812714887219206,
+    "source_sha256": "c4a4b3ebe3c88f13b027eff81999344619303ba7705b8a5bad002868e3879acb"
+  }
+]
