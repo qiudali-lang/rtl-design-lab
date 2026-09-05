@@ -1,0 +1,18 @@
+[
+  {
+    "output": "result_2.txt",
+    "reference": "result_2_golden.txt",
+    "tokens": 72,
+    "match_ignoring_whitespace": true,
+    "output_sha256": "5a715a742e2312b972919c02d418914e8c18b759e5c5ce1c66bcf613279e2bd9",
+    "reference_sha256": "f88ffa9cc4226ae97c07f684b8efd5d5e6a55d796059c948fa1e0973a113ed75"
+  },
+  {
+    "output": "result_3.txt",
+    "reference": "result_3_golden.txt",
+    "tokens": 72,
+    "match_ignoring_whitespace": true,
+    "output_sha256": "3ff700254221c13629efa6cc37c77f8f1d6d2e804817eda0169b78a1c6cbdacd",
+    "reference_sha256": "ca75b1af31732bc3b28272c745e08eed0039f96ae7b2d4d07f8440f5c7ffee27"
+  }
+]
