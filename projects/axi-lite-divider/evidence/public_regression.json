@@ -1,0 +1,39 @@
+{
+  "verified_at_utc": "2026-09-05T02:01:44+00:00",
+  "simulator": "Icarus Verilog 14.0 development build s20260301-330-gb8b6e225f-dirty",
+  "original_completed_version": {
+    "arithmetic_pairs": 65280,
+    "arithmetic_result": "PASS",
+    "interface_result": "FAIL (known read-response defect)",
+    "failure": "RDATA_STABILITY_FAIL cycle=0 held=0 actual=5",
+    "failure_simulation_time_ns": 1990,
+    "core_logic_modified": false
+  },
+  "follow_up_read_response_fix": {
+    "tests": [
+      {
+        "test": "tb_divider_exhaustive",
+        "result": "PASS",
+        "summary": [
+          "PASS arithmetic_pairs=65280 zero_divisor=nonterminating_observed reset=pass"
+        ]
+      },
+      {
+        "test": "tb_axi_public",
+        "result": "PASS",
+        "summary": [
+          "PASS AXI orders=3 write_backpressure=pass read_snapshot=pass arithmetic=pass wstrb=pass reset=pass"
+        ]
+      }
+    ],
+    "ppa_rerun": false
+  },
+  "published_sources_sha256": {
+    "projects/axi-lite-divider/follow-up/read-response-fix/div_axi_if.sv": "9a729fcfecec4bf4a3c5f7e1f1d09f8fb837e0db2c01bb1da87f7753582b2eb4",
+    "projects/axi-lite-divider/rtl/div_axi_if.sv": "91cd75e35083d9eaf0a8a427947af307d6d89e7380d16badb0318c3deac2afeb",
+    "projects/axi-lite-divider/rtl/divider.sv": "7845736a7a47aea0fadaf9980af08ffec19900d30b11c7586c5833178cb1d1fe",
+    "projects/axi-lite-divider/tb/legacy_interface_sva_tb.sv": "887d22a4b6c08cad26a098d20766c923cf8887af0c765d58486eba84496e2535",
+    "projects/axi-lite-divider/tb/tb_axi_public.sv": "0dad99b612381f93fb776cc4fa97d8170c0ad08e58f6859087ba6dc92f465568",
+    "projects/axi-lite-divider/tb/tb_divider_exhaustive.sv": "64aa873059bd53ac599c6441c1cfa4d74c6d2a9970707cddbda1c74fd160a1fe"
+  }
+}
