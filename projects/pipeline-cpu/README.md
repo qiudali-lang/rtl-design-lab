@@ -43,6 +43,16 @@ flowchart LR
 
 ## 展示范围
 
-原文件包含明确的课程保密及禁止公开声明，因此这里公开个人重写的架构说明与结果摘要，不上传课程 exercise、完成版源码或教学 testbench。寄存器输出记录的来源信息见 [证据索引](../../docs/PROVENANCE.md)。
+历史原文件包含明确的课程保密及禁止公开声明，因此历史部分只公开个人重写的架构说明与结果摘要，不上传课程 exercise、完成版源码或教学 testbench。下方新增的是采用不同 ISA、接口和实现结构从零设计的公开 CPU。寄存器输出记录的来源信息见 [证据索引](../../docs/PROVENANCE.md)。
 
 可继续扩展的验证点包括连续同目标写入、EX2/WB 同时命中、不同类型指令依赖链和复位边界。
+
+## 独立公开 RTL
+
+`rtl/cpu16.sv` 是从零设计的另一套 16-bit 教学 CPU，采用新的指令编码，与历史课程 ISA、接口和文件结构不同。它包含 IF、ID、EX、MEM、WB 五级、EX/MEM 与 MEM/WB 前递、load-use interlock、taken-branch flush、内部指令/数据存储器和按序写回。
+
+```sh
+python projects/pipeline-cpu/scripts/run_tests.py
+```
+
+`tb/tb_cpu16.sv` 的自检程序覆盖连续相关 ALU 指令、store/load、load-use 停顿、taken branch 冲刷和 HALT 提交。该公开核是独立作品集实现，不是对禁止公开课程完成版的复制。

@@ -4,6 +4,10 @@ outputs/
 work/
 
 # Simulation outputs
+build/
+**/build/
+__pycache__/
+*.pyc
 sim/**/work/
 sim/**/*.wlf
 sim/**/*.vcd

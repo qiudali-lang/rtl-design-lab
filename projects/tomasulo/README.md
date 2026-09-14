@@ -48,3 +48,14 @@ flowchart LR
 - 分支误预测时检查点与 ROB 清理如何配合。
 - 预约 CDB 时隙与动态竞争仲裁的差别，以及对执行延迟的假设。
 - store 地址准备好与允许对架构可见的写入之间的区别。
+
+## 独立公开参考模型
+
+`src/tomasulo.py` 是重新设计的周期级参考模型，包含 8 个架构寄存器、保留站、ROB、寄存器重命名、ADD/SUB/MUL 可变延迟、单 CDB 和按序提交。它不包含课程 VHDL、测试流或 golden 实现。
+
+```sh
+python -m unittest discover -s projects/tomasulo/tests -v
+python projects/tomasulo/src/tomasulo.py
+```
+
+单元测试覆盖 RAW 依赖、年轻指令先完成但按序提交、WAW rename 保持最新映射，以及 ROB/RS 结构冲突。当前版本是行为参考模型，不冒充可综合整机 RTL。

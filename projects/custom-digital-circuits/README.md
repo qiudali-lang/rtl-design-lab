@@ -40,3 +40,16 @@ flowchart LR
 DRC/LVS 与后仿范围明确限定在比较器和触发器项目。SRAM 读写仿真不代表完整 SRAM 版图签核、PVT 全覆盖或可制造性结论。比较器面积与 RCA 延迟属于不同电路，不能合并为同一设计的 PPA 改善。
 
 PDK、厂商模型、课程手册与完整原报告不在公开仓库中；本页以重写的技术摘要展示设计思路和测量条件。
+
+## 独立公开电路模型
+
+`spice/` 提供可读的 technology-neutral SPICE：CMOS inverter、transmission gate、D latch 和 6T SRAM bit cell。器件使用简化 Level-1 教学模型，不包含任何 foundry PDK。
+
+`src/rc_delay.py` 提供参数化 Elmore-delay 路径模型：
+
+```sh
+python -m unittest discover -s projects/custom-digital-circuits/tests -v
+python projects/custom-digital-circuits/src/rc_delay.py
+```
+
+这部分代码可用于公开讨论晶体管尺寸、负载与路径延迟关系，但不能代替 45 nm Spectre 仿真、DRC/LVS、版图寄生提取或硅后签核。

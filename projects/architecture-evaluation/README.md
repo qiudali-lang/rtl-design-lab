@@ -43,3 +43,14 @@ flowchart LR
 ```
 
 分析时分别记录输入、配置、计量对象与基线，避免将单项最佳结果拼接为不存在的统一配置。
+
+## 独立公开模型
+
+`src/` 提供重新实现的 trace-driven 模型：always-taken、2-bit bimodal、gshare 分支预测器，以及带 LRU replacement 的组相联 Cache。该代码不复制 gem5、Intel Pin、课程框架或合作项目代码。
+
+```sh
+python -m unittest discover -s projects/architecture-evaluation/tests -v
+python projects/architecture-evaluation/scripts/run_demo.py
+```
+
+测试覆盖饱和计数器学习、gshare 确定性、Cache line 内命中和 LRU 淘汰。demo 将结果写入项目内 `build/results.json`；这些是模型自测数据，不替代上文历史 gem5 测量。

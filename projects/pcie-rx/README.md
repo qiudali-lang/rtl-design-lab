@@ -38,3 +38,15 @@ flowchart LR
 ## 范围
 
 本项目不能据此宣称完整 PCIe 协议栈、LTSSM 全覆盖、所有速率代际或协议一致性认证。Gray 指针同步实践也不等于完成 CDC 工具签核。可讨论的核心是：水位计算的延迟、SKP 修改条件、锁定与对齐的启动时序，以及错误如何传播到输出比较。
+
+## 独立公开 RTL
+
+`rtl/` 是不使用课程源码重新设计的 symbol-level 双 lane 接收链路：两个异步 FIFO 将独立 lane 时钟域的数据送到 core 时钟域，COM 建立对齐起点，SKP 可在单 lane 独立删除，随后以 ready/valid 输出配对数据。
+
+输入采用已解码的 9-bit `{is_control, data[7:0]}` symbol，因此该公开实现从 8b/10b 解码之后开始，不声称是完整 PCIe PHY。运行：
+
+```sh
+python projects/pcie-rx/scripts/run_tests.py
+```
+
+自检 TB 使用不同的 lane 时钟、不同的初始偏移和单 lane SKP 插入，期望输出三组对齐数据。代码入口为 `rtl/async_symbol_fifo.sv`、`rtl/pcie_rx_2lane.sv` 和 `tb/tb_pcie_rx_2lane.sv`。
