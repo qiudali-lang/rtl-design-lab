@@ -64,3 +64,6 @@ id_ed25519*
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Interview training: private local resolver, raw history and machine paths
+/interview-prep/local/

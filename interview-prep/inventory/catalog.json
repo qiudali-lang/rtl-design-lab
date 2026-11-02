@@ -1,0 +1,3756 @@
+{
+  "schema_version": 2,
+  "date": "2026-11-01",
+  "remote_base_commit": "c9cade730dd6d1bd238fa12184aa53a2f5e32fc6",
+  "categories": {
+    "K01": "Verilog/SystemVerilog",
+    "K02": "数字电路",
+    "K03": "RTL与微架构",
+    "K04": "CDC/RDC",
+    "K05": "STA/综合/DFT",
+    "K06": "AXI/SoC",
+    "K07": "PCIe/SerDes",
+    "K08": "CPU体系结构",
+    "K09": "Memory/Cache",
+    "K10": "CMOS/VLSI",
+    "K11": "验证与Debug"
+  },
+  "projects": {
+    "P01": {
+      "name": "AXI4-Lite Divider + MicroBlaze SoC",
+      "legacy": [
+        "AXI"
+      ],
+      "public": "axi-lite-divider"
+    },
+    "P02": {
+      "name": "PCIe RX / 8b10b / Elastic Buffer / Deskew",
+      "legacy": [
+        "PCIE"
+      ],
+      "public": "pcie-rx"
+    },
+    "P03": {
+      "name": "自定义五级流水线 CPU",
+      "legacy": [
+        "PIPE"
+      ],
+      "public": "pipeline-cpu"
+    },
+    "P04": {
+      "name": "Tomasulo / ROB / Checkpoint",
+      "legacy": [
+        "TOM"
+      ],
+      "public": "tomasulo"
+    },
+    "P05": {
+      "name": "gem5 RISC-V / x86 + Pin分支预测",
+      "legacy": [
+        "GEM5",
+        "PIN",
+        "CACHE"
+      ],
+      "public": "architecture-evaluation"
+    },
+    "P06": {
+      "name": "45nm Full-custom / SRAM",
+      "legacy": [
+        "CMOS"
+      ],
+      "public": "custom-digital-circuits"
+    }
+  },
+  "rtl_aliases": {
+    "R001": {
+      "name": "同步FIFO",
+      "legacy_ids": [
+        "RTL-04"
+      ]
+    },
+    "R002": {
+      "name": "异步FIFO",
+      "legacy_ids": [
+        "RTL-22",
+        "RTL-02"
+      ],
+      "note": "RTL-02仅写指针子模块，不等于完整异步FIFO已经完成。"
+    },
+    "R003": {
+      "name": "RR Arbiter",
+      "legacy_ids": [
+        "RTL-19-RR",
+        "RTL-19"
+      ]
+    },
+    "R004": {
+      "name": "skid/elastic valid-ready buffer",
+      "legacy_ids": [
+        "RTL-20",
+        "RTL-11",
+        "RTL-12"
+      ]
+    },
+    "R005": {
+      "name": "AXI-Lite Slave",
+      "legacy_ids": [],
+      "project": "P01",
+      "note": "旧库无同名完整独立Slave题；使用P01规格入口，Phase2再定独立教学合同，不伪造面经原题"
+    },
+    "R006": {
+      "name": "Stall/Flush",
+      "legacy_ids": [
+        "RTL-24"
+      ]
+    },
+    "R007": {
+      "name": "Forwarding/HDU",
+      "legacy_ids": [
+        "RTL-24"
+      ],
+      "note": "与R006共享旧母题，不另计母题"
+    },
+    "R008": {
+      "name": "UART",
+      "legacy_ids": [
+        "RTL-42"
+      ]
+    },
+    "R009": {
+      "name": "乘/除法器",
+      "legacy_ids": [
+        "RTL-41"
+      ],
+      "project": "P01",
+      "note": "公开原除法核心是项目证据，不等于独立手撕已完成"
+    },
+    "R010": {
+      "name": "FSM/计数器",
+      "legacy_ids": [
+        "RTL-01",
+        "RTL-03",
+        "RTL-17",
+        "RTL-26",
+        "RTL-29",
+        "RTL-30",
+        "RTL-31",
+        "RTL-36"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "source_id": "S-KNOWLEDGE",
+      "legacy_source_id": null,
+      "name": "旧项目/基础问答权威库",
+      "location": "local://legacy/02_综合高频题库/统一题库_权威数据_V0.4.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 384894,
+      "sha256": "35d19daf67bd2b8e41ce43260344ba8da5c3e6dabb245267adffc95dd52ed475",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-RTL",
+      "legacy_source_id": null,
+      "name": "旧RTL专项权威库",
+      "location": "local://legacy/06_RTL手撕题_原题与训练记录/RTL专项题库_权威数据_V0.3.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 56475,
+      "sha256": "068fe3eb3d2901b02d3ad0509d1587b3d40ced22fbcc764cf854ddae158a1756",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-HISI",
+      "legacy_source_id": null,
+      "name": "华为海思来源台账",
+      "location": "local://legacy/00_资料与面经索引/华为海思_正文来源台账_V0.2.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 47336,
+      "sha256": "aa450f1e8c92e12fbdb4b66fc4e8c67d5ef9500eae638510db6627c7f575f009",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-W40",
+      "legacy_source_id": null,
+      "name": "笔试40题索引",
+      "location": "local://legacy/00_资料与面经索引/用户笔试40题/题目索引与核验状态.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 37274,
+      "sha256": "6f6b07dc4b481a3a313013d402fca1b8047471016366ef0caedea2f91b143c62",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-EVENTS",
+      "legacy_source_id": null,
+      "name": "历史面试事件数据库",
+      "location": "local://legacy/09_模拟面试与真实面试复盘/历史面经数据库.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 4251,
+      "sha256": "686d4000272a092adc8448e3080d2a858855f815e9890fe34000759714d0b3b7",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-STATE",
+      "legacy_source_id": null,
+      "name": "旧动态训练状态",
+      "location": "local://legacy/10_日计划与进度/当前训练状态.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 148908,
+      "sha256": "c65a89f6b847d7ef40b915478336bd9cd1107ce14e3f6bd44390be0b8bb63c46",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-PROGRESS",
+      "legacy_source_id": null,
+      "name": "旧进度与错题",
+      "location": "local://legacy/08_错题本与掌握进度/当前进度与错题_V0.4.md",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 26292,
+      "sha256": "346fa44ce469bea5644401db2939adc469bad2035c5a5a33aa0b9f1140ddf5c5",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-URLS",
+      "legacy_source_id": null,
+      "name": "旧面经URL去重索引",
+      "location": "local://legacy/00_资料与面经索引/面经原帖去重索引_V0.2.json",
+      "kind": "既有权威索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 88870,
+      "sha256": "afa3e4209d6029ae8492eb3c44e3f7e46519181ad0ff0d612db1e8f57561c97f",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_METADATA_ONLY"
+    },
+    {
+      "source_id": "S-LEGACY-RES-BASE",
+      "legacy_source_id": "RES-BASE",
+      "name": "用户指定基线",
+      "location": "local://source/S-LEGACY-RES-BASE",
+      "kind": "用户指定基线",
+      "readability": "MISSING",
+      "exists": false,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-RES-C1",
+      "legacy_source_id": "RES-C1",
+      "name": "设计简历候选",
+      "location": "local://source/S-LEGACY-RES-C1",
+      "kind": "设计简历候选",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 358281,
+      "sha256": "2c23d7d030aa3f747dabb341a15b282bfa4e6d4ec1ab47bdc8229846f2525d8b",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-RES-C2",
+      "legacy_source_id": "RES-C2",
+      "name": "设计简历候选",
+      "location": "local://source/S-LEGACY-RES-C2",
+      "kind": "设计简历候选",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 866221,
+      "sha256": "c540def078e80e7f0a5e2b09acf9b9fc1d8ac4db25fbce224ba4a4733afa5087",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-TRACK",
+      "legacy_source_id": "TRACK",
+      "name": "训练流水账",
+      "location": "local://workspace/outputs/CPU面试准备_训练记录.txt",
+      "kind": "训练流水账",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 203253,
+      "sha256": "ec3a8fb761625f6dffdab678eab75c8b0ec5f7e7e349e0f450ed2aa0b13481cf",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-MASTER",
+      "legacy_source_id": "MASTER",
+      "name": "旧综合索引",
+      "location": "local://workspace/outputs/面经与模拟复盘_设计准备总清单.txt",
+      "kind": "旧综合索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 86520,
+      "sha256": "2443704f0016a207439fbc02f226136e72f12441150f59ccf343710347a8b961",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-DAILY",
+      "legacy_source_id": "DAILY",
+      "name": "面经采集台账",
+      "location": "local://workspace/outputs/面经每日更新.txt",
+      "kind": "面经采集台账",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 119060,
+      "sha256": "44908ffd8f8ac7ca0ab4792fd291d5b33fd5b40a8c13be97d14f9c0ec9c35f60",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-HISI",
+      "legacy_source_id": "HISI",
+      "name": "公开面经汇总",
+      "location": "local://workspace/outputs/华为海思数字IC设计_面经汇总与全面准备清单.md",
+      "kind": "公开面经汇总",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 58750,
+      "sha256": "c10d8d8966d76447066c00e640bccb9702c5815117d13fe8ca420e612c9bc16e",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-MOCK02",
+      "legacy_source_id": "MOCK02",
+      "name": "模拟复盘",
+      "location": "local://source/S-LEGACY-MOCK02",
+      "kind": "模拟复盘",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 14771,
+      "sha256": "70b30c563d57d5d9cde1d2e63b609e0b5d8163ff8b4e8f9e4e6aa57ab125a777",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-MOCK17",
+      "legacy_source_id": "MOCK17",
+      "name": "结构化模拟复盘",
+      "location": "local://workspace/outputs/模拟面试_20261017/复盘数据.json",
+      "kind": "结构化模拟复盘",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 50340,
+      "sha256": "760de1d5a6759aaba3cb2930d36488d8ac90e0f0fa007a268243b2e00cd316ca",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-VIDEO17",
+      "legacy_source_id": "VIDEO17",
+      "name": "模拟录像",
+      "location": "local://source/S-LEGACY-VIDEO17",
+      "kind": "模拟录像",
+      "readability": "MISSING",
+      "exists": false,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-USER20",
+      "legacy_source_id": "USER20",
+      "name": "用户提供既往面试摘要",
+      "location": "local://workspace/outputs/用户补充_上次面试20题_20261018.txt",
+      "kind": "用户提供既往面试摘要",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 10323,
+      "sha256": "c07247d4be57f233e825fc747f5c07506bd3c461006ffcbf95c8eb2f8c4e315c",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-OLD8",
+      "legacy_source_id": "OLD8",
+      "name": "源码/报告核查",
+      "location": "local://source/S-LEGACY-OLD8",
+      "kind": "源码/报告核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3220,
+      "sha256": "4d9f88fe8414c0d5f37accd029c2e9989264ba094dde9504968b70b331211da2",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-OLDMAP",
+      "legacy_source_id": "OLDMAP",
+      "name": "转述/课程映射",
+      "location": "local://source/S-LEGACY-OLDMAP",
+      "kind": "转述/课程映射",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 17649,
+      "sha256": "a84e29abe4094cb5ef220947350c60e26874b1c55e66e22555ced606cb52ca71",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-OLDQ",
+      "legacy_source_id": "OLDQ",
+      "name": "旧复习手册",
+      "location": "local://source/S-LEGACY-OLDQ",
+      "kind": "旧复习手册",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 52055,
+      "sha256": "d7876ad0907e924f5b70a5653eddfeb7280239d4bbb1c438bcbfe2ed2d937542",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-APP31",
+      "legacy_source_id": "APP31",
+      "name": "历史投递/岗位快照",
+      "location": "local://source/S-LEGACY-APP31",
+      "kind": "历史投递/岗位快照",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 13768,
+      "sha256": "a9714633d02864ba8f3d2cee0746724dfe01a487b8366846ab004271ddb29e11",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-VERIFY",
+      "legacy_source_id": "VERIFY",
+      "name": "历史验证岗安排",
+      "location": "local://workspace/outputs/清微智能_周日验证岗准备与起点.txt",
+      "kind": "历史验证岗安排",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 8021,
+      "sha256": "36a198c83391cec4413e3cc2e049e1a459d57f36f8757828a276c031581592e9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PL-RTL",
+      "legacy_source_id": "PL-RTL",
+      "name": "流水线原工程",
+      "location": "local://source/S-LEGACY-PL-RTL",
+      "kind": "流水线原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 11816,
+      "sha256": "e281cc20d518facb6c02d879628f162c232b62fd33d3e3df72c2076f5e2dca34",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PL-COMP",
+      "legacy_source_id": "PL-COMP",
+      "name": "流水线原工程",
+      "location": "local://source/S-LEGACY-PL-COMP",
+      "kind": "流水线原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 7523,
+      "sha256": "223e45ff94c013ffdcd1064d3b777215d15a50f30f43076c5e31445e35966bec",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PL-TB",
+      "legacy_source_id": "PL-TB",
+      "name": "流水线原工程",
+      "location": "local://source/S-LEGACY-PL-TB",
+      "kind": "流水线原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 13485,
+      "sha256": "aba62312d828276820598b1cbc5f2043ea1114b67bc42f0d2e39d432df416fb5",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PL-LOG",
+      "legacy_source_id": "PL-LOG",
+      "name": "流水线原工程",
+      "location": "local://source/S-LEGACY-PL-LOG",
+      "kind": "流水线原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 13875,
+      "sha256": "8dc3e2d73b6e258c50175775516072a64f9a1328d99c46ac4758020528687c3e",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PL-RF",
+      "legacy_source_id": "PL-RF",
+      "name": "流水线原工程",
+      "location": "local://source/S-LEGACY-PL-RF",
+      "kind": "流水线原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 168,
+      "sha256": "de5d0e63bdf3efdd3dc139d9b7ff37691c725c9465de2018cdf17f2fd7e33782",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-IF",
+      "legacy_source_id": "AX-IF",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-IF",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3561,
+      "sha256": "ebd0a0f2fd05eff5f46ff58f68d9640397e34c1bf72bda75f40d61798b0e6e00",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-CORE",
+      "legacy_source_id": "AX-CORE",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-CORE",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1268,
+      "sha256": "aec15c3e140ea69922973abc07a36509a69d32ddf4e9cd2c334d15738b95e980",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-TB",
+      "legacy_source_id": "AX-TB",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-TB",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 10245,
+      "sha256": "b5f3ede0019618f9bc4a89267ad7dbdd148e82aed84fd5b722928a54d22af5e8",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-SW",
+      "legacy_source_id": "AX-SW",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-SW",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2327,
+      "sha256": "e367fe9ab25f7d27ad0f17e2ce8ae9950b539175858bc489c73dd47c1264faf0",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-MAIN",
+      "legacy_source_id": "AX-MAIN",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-MAIN",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1806,
+      "sha256": "c2c2e07b17c5a4407fc6dd5d9d6b6747919dd46e51e34f680d91a2cc55d993ff",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-PASS",
+      "legacy_source_id": "AX-PASS",
+      "name": "AXI/SoC原工程",
+      "location": "local://source/S-LEGACY-AX-PASS",
+      "kind": "AXI/SoC原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 6,
+      "sha256": "e0ba8b72f361b6f4f71dc78a0b7a570475bdd44e176caad604ba134208475403",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-TIME",
+      "legacy_source_id": "AX-TIME",
+      "name": "AXI/SoC原工程",
+      "location": "local://source/S-LEGACY-AX-TIME",
+      "kind": "AXI/SoC原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1413837,
+      "sha256": "9ce9bf04b830883151870509c4e79fb6c78479d85faad43bf1e5e47077ddf798",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-TO-ISS",
+      "legacy_source_id": "TO-ISS",
+      "name": "Tomasulo原工程",
+      "location": "local://source/S-LEGACY-TO-ISS",
+      "kind": "Tomasulo原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 6965,
+      "sha256": "ea9a6034b4e4921fed7dca8e84ff6e61bcfb722c2f085e27e69d8f3f52f59356",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-TO-DIS",
+      "legacy_source_id": "TO-DIS",
+      "name": "Tomasulo原工程",
+      "location": "local://source/S-LEGACY-TO-DIS",
+      "kind": "Tomasulo原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 39633,
+      "sha256": "51e8eee7dd9cc1e53940e0c8325d2eba3b1d7f696578f1a59ea968f7d28c2f42",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-TO-CFC",
+      "legacy_source_id": "TO-CFC",
+      "name": "Tomasulo原工程",
+      "location": "local://source/S-LEGACY-TO-CFC",
+      "kind": "Tomasulo原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 22721,
+      "sha256": "cab6e6d82db98c02d2fec6fde11df929ef59b86f948147405247e8ad11d7f5fc",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-LANE",
+      "legacy_source_id": "PC-LANE",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-LANE",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 9092,
+      "sha256": "7bbd939dc157b15e59dabf451318fe19eab348d59457a20a8e6556804ddd1780",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-RX",
+      "legacy_source_id": "PC-RX",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-RX",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 6681,
+      "sha256": "014daf2de384525fddcd2e17a2172b516e1fcb0c41f822b2a81461efb860490d",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-EB",
+      "legacy_source_id": "PC-EB",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-EB",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 16982,
+      "sha256": "52ac3a59a0d92d3f863bcae23c50734f04fedb715cfcf6944614f84f530f8848",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-DS",
+      "legacy_source_id": "PC-DS",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-DS",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3727,
+      "sha256": "c3aedc475659c421a4bfd33bf4e0884d79e58a6cf177117452cd5b37ae42d7bf",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-DEC",
+      "legacy_source_id": "PC-DEC",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-DEC",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 8660,
+      "sha256": "8dd12bfb54a8717eebfc6fd1b357aa4c8fc1f49ebd46a41485329b5d9d95a8b0",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-BUF",
+      "legacy_source_id": "PC-BUF",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-BUF",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 5471,
+      "sha256": "de39f066fa6963080e1a41df4621f47f5fc07813cdf21127430f4d677bbf01ae",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-TOP",
+      "legacy_source_id": "PC-TOP",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-TOP",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 5241,
+      "sha256": "f4a57294452f1369dfc975652d2c022191c21a967b70e96e18fb1202f2b7cdeb",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-TB",
+      "legacy_source_id": "PC-TB",
+      "name": "PCIe原工程",
+      "location": "local://source/S-LEGACY-PC-TB",
+      "kind": "PCIe原工程",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 36038,
+      "sha256": "9462d9424f6143c4e1033547762c289ad5810ad8b10dd4395e2981fed4796138",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-QA",
+      "legacy_source_id": "PC-QA",
+      "name": "已核查项目问答",
+      "location": "local://workspace/outputs/PCIe项目面试问答/题目索引.json",
+      "kind": "已核查项目问答",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 60611,
+      "sha256": "0311e1d289100f0af6378b68642f30bdbd9f5327fd8a91227d414c164aef3fc5",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-EE-RCA",
+      "legacy_source_id": "EE-RCA",
+      "name": "原电路报告",
+      "location": "local://source/S-LEGACY-EE-RCA",
+      "kind": "原电路报告",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 6654860,
+      "sha256": "dba510527b436269dd83f528713506185f31501d3689102de6fa870c53cfc95a",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-EE-CMP",
+      "legacy_source_id": "EE-CMP",
+      "name": "原比较器报告",
+      "location": "local://source/S-LEGACY-EE-CMP",
+      "kind": "原比较器报告",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 7771851,
+      "sha256": "29fb2396d8e1ce7be9fc2797014a53b31d8eb5df75472f8d57dde877271a1c35",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-EE-CHECK",
+      "legacy_source_id": "EE-CHECK",
+      "name": "比较器图/报告复核",
+      "location": "local://workspace/outputs/source_review/ee577a_comparator_20261018/核查记录.txt",
+      "kind": "比较器图/报告复核",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2299,
+      "sha256": "9229ebd87e8545be8202ab296cfa2af842f0a348a28047ba408f8fa45a66b6de",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-ARCH-OLD",
+      "legacy_source_id": "ARCH-OLD",
+      "name": "旧架构证据索引",
+      "location": "local://source/S-LEGACY-ARCH-OLD",
+      "kind": "旧架构证据索引",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2956,
+      "sha256": "f3cf7c61ab3e27baa4165842e1e55bfbcf4481a9ec3978fdd516ef714945fc0b",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-CODE1",
+      "legacy_source_id": "CODE1",
+      "name": "本人练习修订版",
+      "location": "local://workspace/outputs/rtl_practice/01_mod10_counter.sv",
+      "kind": "本人练习修订版",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 733,
+      "sha256": "89af4a957e16e5bcc02a26f28ae4307274a76187a65d077a9948de18a1f7e1ec",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-CODE2",
+      "legacy_source_id": "CODE2",
+      "name": "本人练习修订版",
+      "location": "local://workspace/outputs/rtl_practice/02_fifo_wptr8.sv",
+      "kind": "本人练习修订版",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1434,
+      "sha256": "fe00a136ca71db8936936df05a39627e554f90e31ff0ee2c60e07f0f098fcceb",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-CODE3",
+      "legacy_source_id": "CODE3",
+      "name": "本人练习修订版",
+      "location": "local://workspace/outputs/rtl_practice/03_seq1011.sv",
+      "kind": "本人练习修订版",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1622,
+      "sha256": "e681e33c16aee07e3905acba4285b37176127efbb6f58d65378668c03ca37cc4",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-CODE3-R",
+      "legacy_source_id": "CODE3-R",
+      "name": "实际运行状态",
+      "location": "local://workspace/outputs/rtl_practice/03_seq1011_result.json",
+      "kind": "实际运行状态",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 484,
+      "sha256": "8dfb9f205c9e90992f39e638e58eb51bc6fa5ad970dd995d8449022def688ad7",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-PACK",
+      "legacy_source_id": "AX-PACK",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-PACK",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 30129,
+      "sha256": "68ab53235e9da83ba37866d040bb01eb50786af8bd08821b0dfab231a0b96659",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-PACK-SRC",
+      "legacy_source_id": "AX-PACK-SRC",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-PACK-SRC",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3561,
+      "sha256": "ebd0a0f2fd05eff5f46ff58f68d9640397e34c1bf72bda75f40d61798b0e6e00",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-GEN-SRC",
+      "legacy_source_id": "AX-GEN-SRC",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-GEN-SRC",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3561,
+      "sha256": "ebd0a0f2fd05eff5f46ff58f68d9640397e34c1bf72bda75f40d61798b0e6e00",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-SOC",
+      "legacy_source_id": "AX-SOC",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-SOC",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 100338,
+      "sha256": "5f981a4cbb38b6bd977b280579b6de3c2a308e502f68e88d11e1b4a039e01693",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX-BSP",
+      "legacy_source_id": "AX-BSP",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-AX-BSP",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 4248,
+      "sha256": "4aab8369ef9be05f94a311ddb1dfda2646483d28e9598b1e207d220fdb213438",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-ENC",
+      "legacy_source_id": "PC-ENC",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-ENC",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3221,
+      "sha256": "f1c4d40975a1eae2312882a5c08e0910e9f9d8a4ba5aa73df83d47ef9eab4cda",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-ROM",
+      "legacy_source_id": "PC-ROM",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-ROM",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1339,
+      "sha256": "4f24c9cb83dd922faba8a53b46976989c53f00e04d8bffb78375896be5628fc7",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-ENCM",
+      "legacy_source_id": "PC-ENCM",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-ENCM",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 5632,
+      "sha256": "d6614c7f030b3f53dc8cef17f49e663b0a3c27c11eee491172aeee9c832afa5d",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-ENCP",
+      "legacy_source_id": "PC-ENCP",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-ENCP",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 5632,
+      "sha256": "cc1832b10d8f2bbd6d829efcd445f3db7cd9b90570aeede4dcb32639d0faacd1",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-DECM",
+      "legacy_source_id": "PC-DECM",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-DECM",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 4096,
+      "sha256": "e0bd896a43f5e9efc818bdb0f59d2cdf7b4708e129c9583b22b233c994fe9d44",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-PC-DECP",
+      "legacy_source_id": "PC-DECP",
+      "name": "本轮读取的真实项目文件",
+      "location": "local://source/S-LEGACY-PC-DECP",
+      "kind": "本轮读取的真实项目文件",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 4096,
+      "sha256": "55250419a81ddd4eaaa89a19fa8094161953234a4bb1fecfc2501130e38f0fdf",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-ARM-AXI",
+      "legacy_source_id": "ARM-AXI",
+      "name": "一手技术参考；不是个人实现证据",
+      "location": "https://documentation-service.arm.com/static/5f915b62f86e16515cdc3b1c",
+      "kind": "一手技术参考；不是个人实现证据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PRIMARY_REFERENCE_NOT_PERSONAL_EVIDENCE"
+    },
+    {
+      "source_id": "S-LEGACY-ARM-AHB",
+      "legacy_source_id": "ARM-AHB",
+      "name": "一手技术参考；不是个人实现证据",
+      "location": "https://documentation-service.arm.com/static/6141bf0d674a052ae36ca811",
+      "kind": "一手技术参考；不是个人实现证据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PRIMARY_REFERENCE_NOT_PERSONAL_EVIDENCE"
+    },
+    {
+      "source_id": "S-LEGACY-ARM-TIMEOUT",
+      "legacy_source_id": "ARM-TIMEOUT",
+      "name": "一手技术参考；不是个人实现证据",
+      "location": "https://community.arm.com/forums/f/architectures-and-processors-forum/7879/use-of-wvalid-signal-in-axi/173260",
+      "kind": "一手技术参考；不是个人实现证据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PRIMARY_REFERENCE_NOT_PERSONAL_EVIDENCE"
+    },
+    {
+      "source_id": "S-LEGACY-AMD-8B10B",
+      "legacy_source_id": "AMD-8B10B",
+      "name": "一手技术参考；不是个人实现证据",
+      "location": "https://docs.amd.com/api/khub/documents/EszknF1grvYWytRf4Up9UA/content",
+      "kind": "一手技术参考；不是个人实现证据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PRIMARY_REFERENCE_NOT_PERSONAL_EVIDENCE"
+    },
+    {
+      "source_id": "S-LEGACY-REAL-20261018-01",
+      "legacy_source_id": "REAL-20261018-01",
+      "name": "真实面试亲历回忆；非逐字录音",
+      "location": "local://legacy/09_模拟面试与真实面试复盘/2026-10-18_数字IC面试_公司待核实/原始回忆.md",
+      "kind": "真实面试亲历回忆；非逐字录音",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1521,
+      "sha256": "88cb42257ee44b68ecd67a3aa0723a397c6b935670a8765b0c4350b431e33223",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-POST-RESUME-20261018",
+      "legacy_source_id": "POST-RESUME-20261018",
+      "name": "同场面试补充及长期恢复状态",
+      "location": "local://legacy/09_模拟面试与真实面试复盘/2026-10-18_数字IC面试_公司待核实/面试复盘补充_V0.3.md",
+      "kind": "同场面试补充及长期恢复状态",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 6955,
+      "sha256": "6c2e53039e58edcc40f860ad34aa14de3f72860696e319e35817c1ad37b40c8b",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX19-TB",
+      "legacy_source_id": "AX19-TB",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-AX19-TB",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 10245,
+      "sha256": "b5f3ede0019618f9bc4a89267ad7dbdd148e82aed84fd5b722928a54d22af5e8",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-AX-TB",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-AX19-SVA",
+      "legacy_source_id": "AX19-SVA",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-AX19-SVA",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 10245,
+      "sha256": "b5f3ede0019618f9bc4a89267ad7dbdd148e82aed84fd5b722928a54d22af5e8",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-AX-TB",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-ROB",
+      "legacy_source_id": "T19-ROB",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-ROB",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 12207,
+      "sha256": "5f05ef290c541c5420c291966a26bf18ef4c672bee65efbd28d94f425f4b43b9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-CFC",
+      "legacy_source_id": "T19-CFC",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-CFC",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 22721,
+      "sha256": "cab6e6d82db98c02d2fec6fde11df929ef59b86f948147405247e8ad11d7f5fc",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-TO-CFC",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-DIS",
+      "legacy_source_id": "T19-DIS",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-DIS",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 39633,
+      "sha256": "51e8eee7dd9cc1e53940e0c8325d2eba3b1d7f696578f1a59ea968f7d28c2f42",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-TO-DIS",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-IQ",
+      "legacy_source_id": "T19-IQ",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-IQ",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 50923,
+      "sha256": "197278bdf8c06487be48d419e60e590115a9d5f7a7c2f6258c01769b6bd86c66",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-CDB",
+      "legacy_source_id": "T19-CDB",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-CDB",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 12038,
+      "sha256": "86cc16a900e13cdbc537722c4a604c315dca1635a12d2e6316df4f40c9536126",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-LSQ",
+      "legacy_source_id": "T19-LSQ",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-LSQ",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 87143,
+      "sha256": "7334542f55b5bcc41e92c1f9ff35aa7aa3bc00a7ab70746d46c272e368e410c6",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-SAB",
+      "legacy_source_id": "T19-SAB",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-SAB",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 23762,
+      "sha256": "ee085c84b702e3e0d0d77755daf1e4897a762a4a3eb5699273a688a47327d545",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-LOAD",
+      "legacy_source_id": "T19-LOAD",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-LOAD",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 21125,
+      "sha256": "9658510d85a2c5a28c07436253cf0f08be8d48051473fb221b3e0e2871c80047",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-T19-BPB",
+      "legacy_source_id": "T19-BPB",
+      "name": "本场静态源码核查",
+      "location": "local://source/S-LEGACY-T19-BPB",
+      "kind": "本场静态源码核查",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 7783,
+      "sha256": "2e725ba92069d3067ef8849d14032f608dcbfc31b9269af94716bbe0a1383f6c",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-REAL-20261019-PDF",
+      "legacy_source_id": "REAL-20261019-PDF",
+      "name": "用户提供真实面试整理PDF",
+      "location": "local://legacy/09_模拟面试与真实面试复盘/2026-10-19_数字IC面试_AXI_Tomasulo_公司待核实/原始面试整理.pdf",
+      "kind": "用户提供真实面试整理PDF",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 40420,
+      "sha256": "b8e32517f70e537866738a5a462a773a553d66ddcf5bb91edab9cb30c88652d9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-STANFORD-SRT",
+      "legacy_source_id": "STANFORD-SRT",
+      "name": "课程原理主来源",
+      "location": "https://web.stanford.edu/class/ee486/doc/lecture12.pdf",
+      "kind": "课程原理主来源",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PRIMARY_REFERENCE_NOT_PERSONAL_EVIDENCE"
+    },
+    {
+      "source_id": "S-LEGACY-OLDREFRTL",
+      "legacy_source_id": null,
+      "name": "旧教学RTL（15模块，非用户独立成果）",
+      "location": "local://source/S-LEGACY-OLDREFRTL",
+      "kind": "补充来源",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 8741,
+      "sha256": "a9c24d2c007c7ca70d522cebd199e33de7431eb3190425156e37db31c7cdce8b",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-OLDREFTB",
+      "legacy_source_id": null,
+      "name": "旧教学RTL测试平台",
+      "location": "local://source/S-LEGACY-OLDREFTB",
+      "kind": "补充来源",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 7333,
+      "sha256": "1174a2b70652d66711f40b71be19d3d04814208ddfcf68df5719ef9c81478605",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LEGACY-OLDREFLOG",
+      "legacy_source_id": null,
+      "name": "旧教学测试日志，非本轮回归",
+      "location": "local://source/S-LEGACY-OLDREFLOG",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 297,
+      "sha256": "c17ab6607a6ba0d6a9ff382eb1a8469f7d174adeca7a409cbd8c7335990705a3",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-AUDIT",
+      "legacy_source_id": null,
+      "name": "架构/电路后补证据核查",
+      "location": "local://workspace/outputs/source_review/last_two_projects_20261019/本轮核查摘要.json",
+      "kind": "补充来源",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3361,
+      "sha256": "73c7cd6f052cc89a6e8cf233149b5cff1338fccfb0cc9246128d784ff0e106a9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-USER-V2",
+      "legacy_source_id": null,
+      "name": "本轮用户V2.0直接指令",
+      "location": "local://source/S-USER-V2",
+      "kind": "补充来源",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 16327,
+      "sha256": "84eebe024fcd56c91055d39f2a0ad8c3518c890e38d7dd7a6529e00177901bb9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-DESKTOP-RTL",
+      "legacy_source_id": null,
+      "name": "桌面已练代码归档",
+      "location": "local://source/S-DESKTOP-RTL",
+      "kind": "补充来源",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-WORD-BASE",
+      "legacy_source_id": null,
+      "name": "学长原稿增补版（第三方内容与个人经历分开）",
+      "location": "local://source/S-WORD-BASE",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 2081200,
+      "sha256": "cdc671f2ccab0d260120d5c8f4276e47664c97703c050c5087a29d5d786319d2",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-WORD-ORIGINAL",
+      "legacy_source_id": null,
+      "name": "学长面试准备原稿",
+      "location": "local://source/S-WORD-ORIGINAL",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 2287092,
+      "sha256": "949f95a9606faf381daf1e019700bdfcd1edc30f59ab2c092407eccf1d9f8f7f",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-WORD-PCIE",
+      "legacy_source_id": null,
+      "name": "更正后的PCIe准备原稿",
+      "location": "local://source/S-WORD-PCIE",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 609772,
+      "sha256": "3a2b78bc45f39dcb8dfe8c875d645c564858d3f9a96d93929f50e0514fdd0881",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-01",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-01",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 295655,
+      "sha256": "0abdd43105331ba15f50edc6dad715c60c2fe46b85d422cfdb2369d806e0d267",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-02",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-02",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 1496611,
+      "sha256": "650c3bc21cdaad5566b91cbb995f636686ba1b69259b3cb9c156801530667c2f",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-03",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-03",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 356989,
+      "sha256": "e45394269231794949851d512e4734e6640905eb3b486fe2d8014549c4b45494",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-04",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-04",
+      "kind": "补充来源",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 28573,
+      "sha256": "6ddd8d3dbf1babacfad5fdd7735c00fc30b0388a48b4e6eeb6731f4e5d0f8460",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-05",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-05",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 6654860,
+      "sha256": "dba510527b436269dd83f528713506185f31501d3689102de6fa870c53cfc95a",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-EE-RCA",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-06",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-06",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 7771851,
+      "sha256": "29fb2396d8e1ce7be9fc2797014a53b31d8eb5df75472f8d57dde877271a1c35",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-EE-CMP",
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-LATE-07",
+      "legacy_source_id": null,
+      "name": "原实验报告/配置（已索引）",
+      "location": "local://source/S-LATE-07",
+      "kind": "补充来源",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 5801461,
+      "sha256": "d0bb95a9f4b7ad5437176c473db168bb0fb59f58b696ee2a27e9ff505e075f89",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_NO_RAW_EXPORT"
+    },
+    {
+      "source_id": "S-M17-01",
+      "legacy_source_id": null,
+      "name": "本次原录像",
+      "location": "local://source/S-M17-01",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "MISSING",
+      "exists": false,
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-VIDEO17",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-02",
+      "legacy_source_id": null,
+      "name": "本次完整转写",
+      "location": "local://workspace/work/mock_20261017/transcript_medium.txt",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 41189,
+      "sha256": "bc51488328badf882901840b96ac0a1459277e4e7d674540897efe7249e5333c",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-03",
+      "legacy_source_id": null,
+      "name": "重点段复转",
+      "location": "local://workspace/work/mock_20261017/key_pipeline_tomasulo_metrics.txt",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 4894,
+      "sha256": "e89ea719f30e8c388ffd4b647c530e1bd6e6387016358208eb0f3b9f5fe401f1",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-04",
+      "legacy_source_id": null,
+      "name": "EE457真实流水线RTL",
+      "location": "local://source/S-M17-04",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 11816,
+      "sha256": "e281cc20d518facb6c02d879628f162c232b62fd33d3e3df72c2076f5e2dca34",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-PL-RTL",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-05",
+      "legacy_source_id": null,
+      "name": "除法核心",
+      "location": "local://source/S-M17-05",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 1268,
+      "sha256": "aec15c3e140ea69922973abc07a36509a69d32ddf4e9cd2c334d15738b95e980",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-AX-CORE",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-06",
+      "legacy_source_id": null,
+      "name": "AXI接口",
+      "location": "local://source/S-M17-06",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3561,
+      "sha256": "ebd0a0f2fd05eff5f46ff58f68d9640397e34c1bf72bda75f40d61798b0e6e00",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-AX-IF",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-07",
+      "legacy_source_id": null,
+      "name": "PCIe接收链",
+      "location": "local://source/S-M17-07",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 9092,
+      "sha256": "7bbd939dc157b15e59dabf451318fe19eab348d59457a20a8e6556804ddd1780",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-PC-LANE",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-08",
+      "legacy_source_id": null,
+      "name": "比较器核查记录",
+      "location": "local://workspace/outputs/source_review/ee577a_comparator_20261018/核查记录.txt",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2299,
+      "sha256": "9229ebd87e8545be8202ab296cfa2af842f0a348a28047ba408f8fa45a66b6de",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-EE-CHECK",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-09",
+      "legacy_source_id": null,
+      "name": "SRAM课程规格",
+      "location": "local://source/S-M17-09",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 722579,
+      "sha256": "6f99ac456f8bb9e0c20c44703894f6cd3a45052b27ceee85661076be74a109af",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-10",
+      "legacy_source_id": null,
+      "name": "SRAM报告",
+      "location": "local://source/S-M17-10",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "PRESENT_BINARY_NOT_REREAD",
+      "exists": true,
+      "bytes": 5801461,
+      "sha256": "d0bb95a9f4b7ad5437176c473db168bb0fb59f58b696ee2a27e9ff505e075f89",
+      "included": "INDEXED",
+      "duplicate_of": "S-LATE-07",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-11",
+      "legacy_source_id": null,
+      "name": "AMD UG474 Carry Logic Applications",
+      "location": "https://docs.amd.com/r/en-US/ug474_7Series_CLB/Carry-Logic-Applications",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-12",
+      "legacy_source_id": null,
+      "name": "AMD UG474 LUT",
+      "location": "https://docs.amd.com/r/en-US/ug474_7Series_CLB/Look-Up-Table",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-13",
+      "legacy_source_id": null,
+      "name": "MIT 6.004存储层次",
+      "location": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c14/c14s1",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-14",
+      "legacy_source_id": null,
+      "name": "gem5 LPDDR2接口文档",
+      "location": "https://www.gem5.org/documentation/general_docs/stdlib_api/gem5.components.memory.dram_interfaces.lpddr2.html",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "S-M17-15",
+      "legacy_source_id": null,
+      "name": "2026-10-02旧模拟复盘",
+      "location": "local://source/S-M17-15",
+      "kind": "模拟复盘已有证据指针",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 14771,
+      "sha256": "70b30c563d57d5d9cde1d2e63b609e0b5d8163ff8b4e8f9e4e6aa57ab125a777",
+      "included": "INDEXED",
+      "duplicate_of": "S-LEGACY-MOCK02",
+      "boundary": "LOCAL_PRIVATE_OR_PUBLIC_REFERENCE"
+    },
+    {
+      "source_id": "H-X1",
+      "legacy_source_id": null,
+      "name": "华为海思数字IC线下速通面经（9.28）",
+      "location": "https://www.xiaohongshu.com/explore/6ac28180000000001402d96e",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "mixed_personal_advice",
+      "visible_date": "编辑10-04；标题9.28，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X2",
+      "legacy_source_id": null,
+      "name": "海思数字IC设计面经",
+      "location": "https://www.xiaohongshu.com/explore/68fb5e190000000005002a85",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "编辑2025-10-24",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X3",
+      "legacy_source_id": null,
+      "name": "华为海思数字IC面经",
+      "location": "https://www.xiaohongshu.com/explore/6a198749000000000702d05f",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "编辑05-29，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X4",
+      "legacy_source_id": null,
+      "name": "华为海思数字芯片面经",
+      "location": "https://www.xiaohongshu.com/explore/68fb28000000000007038fc3",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_mixed_role",
+      "visible_date": "2025-10-24；自述10.23",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X5",
+      "legacy_source_id": null,
+      "name": "数字IC秋招面试终章——华为海思面经",
+      "location": "https://www.xiaohongshu.com/explore/68f740a40000000003035b0b",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "编辑2025-10-22",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X6",
+      "legacy_source_id": null,
+      "name": "华为海思数字IC线下面试",
+      "location": "https://www.xiaohongshu.com/explore/68f1145c0000000007031eec",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "编辑2025-10-25",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X7",
+      "legacy_source_id": null,
+      "name": "华为数字电路面经",
+      "location": "https://www.xiaohongshu.com/explore/6ab3ee39000000000202a4cf",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "09-23，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X8",
+      "legacy_source_id": null,
+      "name": "华为海思暑期实习面经：数字芯片",
+      "location": "https://www.xiaohongshu.com/explore/6824c6b5000000000303ff78",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_process",
+      "visible_date": "编辑2025-05-14",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X9",
+      "legacy_source_id": null,
+      "name": "9.23线下",
+      "location": "https://www.xiaohongshu.com/explore/6aba0a6b000000001303eeb5",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "正文09-27，标题9.23，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-X10",
+      "legacy_source_id": null,
+      "name": "已成为🌸IC候选人，今年华清池水有点烫",
+      "location": "https://www.xiaohongshu.com/explore/6ad33efc0000000015007e96",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "mixed_personal_advice",
+      "visible_date": "采集时编辑于1小时前",
+      "interview_date": null,
+      "collected": "2026-10-17",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-D15",
+      "legacy_source_id": null,
+      "name": "2h速通🌸",
+      "location": "https://www.xiaohongshu.com/explore/6ad049bc00000000180072ad",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_mixed_role",
+      "visible_date": "采集时12小时前",
+      "interview_date": null,
+      "collected": "2026-10-15",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-D16A",
+      "legacy_source_id": null,
+      "name": "数字IC面经 | 90min速通🌸",
+      "location": "https://www.xiaohongshu.com/explore/6ad06fa2000000001403b066",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_mixed_role",
+      "visible_date": "采集时编辑于昨天20:34",
+      "interview_date": null,
+      "collected": "2026-10-16",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-D16B",
+      "legacy_source_id": null,
+      "name": "华为图灵数字芯片tl与面经",
+      "location": "https://www.xiaohongshu.com/explore/6a1e4f9900000000060331b1",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡06-02/编辑06-01，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-16",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "明确自述图灵实习；非当前官方JD"
+    },
+    {
+      "source_id": "H-D17",
+      "legacy_source_id": null,
+      "name": "1015华清池男宾一位～",
+      "location": "https://www.xiaohongshu.com/explore/6ad1c4a80000000015015887",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "采集时编辑于1天前",
+      "interview_date": null,
+      "collected": "2026-10-17",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-D19",
+      "legacy_source_id": null,
+      "name": "华为海思面经",
+      "location": "https://www.xiaohongshu.com/explore/6ad3a170000000000b005994",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_process",
+      "visible_date": "采集时编辑于1天前",
+      "interview_date": null,
+      "collected": "2026-10-19",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思相关；含混合方向，部门不统一"
+    },
+    {
+      "source_id": "H-N1",
+      "legacy_source_id": null,
+      "name": "海思暑期实习面经",
+      "location": "https://www.nowcoder.com/feed/main/detail/b3f629ab5eb34ea38778805a01e5e1fe",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "2025-05-07；面试4/29",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H-N2",
+      "legacy_source_id": null,
+      "name": "西安海思实习开奖",
+      "location": "https://www.nowcoder.com/feed/main/detail/41e15aadfefa44c6b2f98a00df613e96",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "编辑2024-06-05；面试5/10",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H-N3",
+      "legacy_source_id": null,
+      "name": "秋招——数字IC/FPGA面经（海思段）",
+      "location": "https://blog.nowcoder.net/n/7dcee028cbd04972b1da5f78ab373ce8",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "2021-10-03；面试7/30、7/31",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H-AUX1",
+      "legacy_source_id": null,
+      "name": "华为海思数字ic实习面试手撕代码",
+      "location": "https://www.xiaohongshu.com/explore/67fb4f10000000001c010138",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "reported_images",
+      "visible_date": "编辑2025-04-12",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H-AUX2",
+      "legacy_source_id": null,
+      "name": "华为海思数字IC/验证岗一二面及主管面面经",
+      "location": "https://www.xiaohongshu.com/explore/6a965a97000000000d026ca7",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "knowledge_summary",
+      "visible_date": "08-31，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H-AUX3",
+      "legacy_source_id": null,
+      "name": "21 华为数字ic面",
+      "location": "https://www.xiaohongshu.com/explore/68d5831c0000000012030145",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "limited_text",
+      "visible_date": "编辑2025-09-25",
+      "interview_date": null,
+      "collected": "2026-10-12",
+      "evidence_status": "既往正文已读记录，本轮未逐帖重新打开",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X01",
+      "legacy_source_id": null,
+      "name": "华为海思数字IC线下面试通关攻略（详解版）",
+      "location": "https://www.xiaohongshu.com/explore/6abf45a8000000000b005e9a",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "mixed_personal_advice",
+      "visible_date": "卡10-02/编辑10-01，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X02",
+      "legacy_source_id": null,
+      "name": "🌸海思线下三面芯片设计面经",
+      "location": "https://www.xiaohongshu.com/explore/68ccf81a000000000b03cd84",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡/编辑05-31，年份未明",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X03",
+      "legacy_source_id": null,
+      "name": "华为面经｜数字芯片",
+      "location": "https://www.xiaohongshu.com/explore/68ee1ae40000000004022500",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡2025-10-14/正文2025-10-14",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "作者明确深圳海思，部门隐去"
+    },
+    {
+      "source_id": "H20-X04",
+      "legacy_source_id": null,
+      "name": "华为海思 秋招最后一舞",
+      "location": "https://www.xiaohongshu.com/explore/6ad1f7d10000000018018cc2",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_process",
+      "visible_date": "卡3天前/编辑3天前",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X05",
+      "legacy_source_id": null,
+      "name": "华为海思面经",
+      "location": "https://www.xiaohongshu.com/explore/6904411b0000000007038138",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡2025-10-31/正文2025-10-30",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X06",
+      "legacy_source_id": null,
+      "name": "华为面试通过啦",
+      "location": "https://www.xiaohongshu.com/explore/68f86cbe000000000302c9f7",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_theme_only",
+      "visible_date": "卡2025-10-22/正文2025-10-21",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X07",
+      "legacy_source_id": null,
+      "name": "🔜💰秋招面经：华为海思技术一/二面",
+      "location": "https://www.xiaohongshu.com/explore/68d22496000000000e031b8c",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "reported_collection",
+      "visible_date": "卡2025-10-24/编辑2025-10-23",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-X08",
+      "legacy_source_id": null,
+      "name": "海思图灵达芬奇数字IC实习开奖",
+      "location": "https://www.xiaohongshu.com/explore/6a0faddd00000000370354ae",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡09-23/编辑09-22，年份未明",
+      "interview_date": "正文4.17，年份未明确",
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "标题明确图灵达芬奇；不是当前岗位JD"
+    },
+    {
+      "source_id": "H20-X09",
+      "legacy_source_id": null,
+      "name": "10.15 华为线下面",
+      "location": "https://www.xiaohongshu.com/explore/6ad45d05000000002803bf78",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡2天前/正文2天前",
+      "interview_date": "标题10.15，年份未明确",
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为数字芯片标签，具体部门未明"
+    },
+    {
+      "source_id": "H20-X10",
+      "legacy_source_id": null,
+      "name": "25秋招笔记|私企篇02|海思-数字芯片面经",
+      "location": "https://www.xiaohongshu.com/explore/67c4934a000000002901d816",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_process",
+      "visible_date": "卡2025-03-03/编辑2025-03-02",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "作者明确图灵某部门；非2027官方流程"
+    },
+    {
+      "source_id": "H20-X11",
+      "legacy_source_id": null,
+      "name": "华为海思面经",
+      "location": "https://www.xiaohongshu.com/explore/68fcbdc2000000000301bc19",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "卡/正文2025-10-25",
+      "interview_date": "正文10.25北京，页面年份2025",
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-N01",
+      "legacy_source_id": null,
+      "name": "〖面经〗第九期 华为海思 面经（已主管面）",
+      "location": "https://www.nowcoder.com/discuss/353159149238296576",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "reported_reprint",
+      "visible_date": "编辑2022-02-10",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-N02",
+      "legacy_source_id": null,
+      "name": "华为海思-数字芯片设计工程师-面经",
+      "location": "https://www.nowcoder.com/discuss/408576449295253504",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "2022-10-09",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H20-N03",
+      "legacy_source_id": null,
+      "name": "2022届数字芯片设计实习面经（海思 海康）",
+      "location": "https://www.nowcoder.com/discuss/353157959201005568",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_process",
+      "visible_date": "编辑2021-05-24",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "仅采用海思部分，海康题不冒充海思题"
+    },
+    {
+      "source_id": "H20-C01",
+      "legacy_source_id": null,
+      "name": "2021年数字IC面经---华为",
+      "location": "https://blog.nowcoder.net/n/17bdd320c5564be8a44321ea103e0fb6",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "reported_collection",
+      "visible_date": "2022-01-15；文内2021面经",
+      "interview_date": null,
+      "collected": "2026-10-20",
+      "evidence_status": "正文已读",
+      "scope": "华为/海思数字IC相关，具体部门未确认"
+    },
+    {
+      "source_id": "H23-X01",
+      "legacy_source_id": null,
+      "name": "27届9本2硕华为海思面经",
+      "location": "https://www.xiaohongshu.com/explore/6ad9b4af000000002b01fdfc",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_mixed_role",
+      "visible_date": "搜索卡1天前；正文昨天00:01 北京，保留原显示，不补绝对发表日",
+      "interview_date": null,
+      "collected": "2026-10-23",
+      "evidence_status": "正文与相关作者评论已读；未核技术题图",
+      "scope": "作者自述海思数字芯片相关面试，简历为验证项目背景；具体岗位/部门待核，不能当纯CPU/RTL或图灵专属样本"
+    },
+    {
+      "source_id": "H25-X01",
+      "legacy_source_id": null,
+      "name": "10.24海思丝滑入池",
+      "location": "https://www.xiaohongshu.com/explore/6add90cc000000002c0259e8",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "搜索卡昨天13:17；正文昨天22:17浙江；作者技术回复9小时前上海；保留页面显示，不补绝对发表日",
+      "interview_date": null,
+      "collected": "2026-10-25",
+      "evidence_status": "正文与相关作者评论已读；题型来自作者本人评论，未见完整代码题面",
+      "scope": "作者自述数字芯片，联系接口为麒麟媒体IP部；不等于已核具体入职团队、CPU岗位或图灵专属样本"
+    },
+    {
+      "source_id": "H26-X01",
+      "legacy_source_id": null,
+      "name": "紧绷的心终于死了（华为凉经）",
+      "location": "https://www.xiaohongshu.com/explore/6adc29ea000000003101d685",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "搜索卡2天前；正文编辑于2天前 新加坡；不推算绝对发表日",
+      "interview_date": null,
+      "collected": "2026-10-26",
+      "evidence_status": "正文及可见作者相关回复已读；无完整代码规格，未核技术题图",
+      "scope": "作者自述数字IC设计、华为；评论提到上海。具体团队未核，不当图灵CPU专属样本。"
+    },
+    {
+      "source_id": "H30-X01",
+      "legacy_source_id": null,
+      "name": "三小时速通华子，符合114525",
+      "location": "https://www.xiaohongshu.com/explore/6ad1a56e0000000015010a92",
+      "kind": "公开面经元数据",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "personal_technical",
+      "visible_date": "搜索卡2天前；正文编辑于2天前 四川；不推算绝对发表日",
+      "interview_date": null,
+      "collected": "2026-10-30",
+      "evidence_status": "正文及可见相关评论已读，未核技术题图，无完整代码题面",
+      "scope": "华为为作者自述；Verilog/数字电路题相关，具体岗位/团队未确认。站内猜你想搜不作为部门证据，不当海思图灵CPU专属样本。"
+    },
+    {
+      "source_id": "S-URL-017",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/68f085c6000000000301b290",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-018",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6aca47ef000000001c01f768",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-019",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6aca56750000000014003463",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-020",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ab4c5eb0000000014038166",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-021",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6a69c18b000000001400400c",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-022",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ac4d5e0000000000a01f6be",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-023",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6acdf9a6000000001203e738",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-024",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-025",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6a7c41a10000000033033c29",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-026",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6a7c3ae40000000025004ed3",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-027",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6aa14f850000000012024727",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-029",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6aca54f00000000014002c7e",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-032",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ad1cd9b000000001802f0b3",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-033",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://xhslink.cn/o/LHCFsODv5J",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-035",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6aace666000000000d02467e",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-036",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ad39134000000001403a29d",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-037",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ad39e2d000000001400342e",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-038",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6ac703ea000000001203c448",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-057",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6adcce13000000002a02a011",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-URL-058",
+      "legacy_source_id": null,
+      "name": "其他既存URL来源（正文分类待复核）",
+      "location": "https://www.xiaohongshu.com/explore/6adf5bbd000000001500f72d",
+      "kind": "旧URL去重索引",
+      "readability": "METADATA_ONLY_NOT_FETCHED_THIS_RUN",
+      "exists": null,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "TO_REVIEW_NOT_CONFIRMED_INTERVIEW"
+    },
+    {
+      "source_id": "S-ORIGINAL-P01",
+      "legacy_source_id": null,
+      "name": "AXI4-Lite Divider + MicroBlaze SoC原资料目录",
+      "location": "local://source/S-ORIGINAL-P01",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P01",
+      "legacy_source_id": null,
+      "name": "AXI4-Lite Divider + MicroBlaze SoC公开作品集页面",
+      "location": "repo://projects/axi-lite-divider/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3546,
+      "sha256": "f0686e49963c8cfedc9c6212647f167894e9f6b32e5574c25fe3e8894869dd5f",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    },
+    {
+      "source_id": "S-ORIGINAL-P02",
+      "legacy_source_id": null,
+      "name": "PCIe RX / 8b10b / Elastic Buffer / Deskew原资料目录",
+      "location": "local://source/S-ORIGINAL-P02",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P02",
+      "legacy_source_id": null,
+      "name": "PCIe RX / 8b10b / Elastic Buffer / Deskew公开作品集页面",
+      "location": "repo://projects/pcie-rx/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3051,
+      "sha256": "fa396a9a68811fe262865ba2a9f21c4b968cb0b3b4733140b19395ddfbf412a7",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    },
+    {
+      "source_id": "S-ORIGINAL-P03",
+      "legacy_source_id": null,
+      "name": "自定义五级流水线 CPU原资料目录",
+      "location": "local://source/S-ORIGINAL-P03",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P03",
+      "legacy_source_id": null,
+      "name": "自定义五级流水线 CPU公开作品集页面",
+      "location": "repo://projects/pipeline-cpu/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2901,
+      "sha256": "6cdf8037a9317a43f5c8f8543d579ddc6fa6119445e84f4c48264a29c6f40364",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    },
+    {
+      "source_id": "S-ORIGINAL-P04",
+      "legacy_source_id": null,
+      "name": "Tomasulo / ROB / Checkpoint原资料目录",
+      "location": "local://source/S-ORIGINAL-P04",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P04",
+      "legacy_source_id": null,
+      "name": "Tomasulo / ROB / Checkpoint公开作品集页面",
+      "location": "repo://projects/tomasulo/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3181,
+      "sha256": "363898e15f38bacb2e8fb793991ff9e8c06e8b3465c59ff4fc2d8d25798536a6",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    },
+    {
+      "source_id": "S-ORIGINAL-P05",
+      "legacy_source_id": null,
+      "name": "gem5 RISC-V / x86 + Pin分支预测原资料目录",
+      "location": "local://source/S-ORIGINAL-P05",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P05",
+      "legacy_source_id": null,
+      "name": "gem5 RISC-V / x86 + Pin分支预测公开作品集页面",
+      "location": "repo://projects/architecture-evaluation/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 3472,
+      "sha256": "074bc3aa13ae4b1d11930185a6d0c71ead77d015225909845347164b5deeb5e9",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    },
+    {
+      "source_id": "S-ORIGINAL-P06",
+      "legacy_source_id": null,
+      "name": "45nm Full-custom / SRAM原资料目录",
+      "location": "local://source/S-ORIGINAL-P06",
+      "kind": "原项目目录",
+      "readability": "DIRECTORY_INDEX_ONLY",
+      "exists": true,
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "LOCAL_PRIVATE_COURSE_OR_COLLABORATIVE"
+    },
+    {
+      "source_id": "S-PUBLIC-P06",
+      "legacy_source_id": null,
+      "name": "45nm Full-custom / SRAM公开作品集页面",
+      "location": "repo://projects/custom-digital-circuits/README.md",
+      "kind": "公开说明与重实现",
+      "readability": "TEXT_READABLE",
+      "exists": true,
+      "bytes": 2777,
+      "sha256": "4df2e59e499c208f9fe3f1b4b29a4daaae70ff530a11c34a279363f1ebc58118",
+      "included": "INDEXED",
+      "duplicate_of": null,
+      "boundary": "PUBLIC_PROVENANCE_APPLIES"
+    }
+  ],
+  "events": [
+    {
+      "id": "MOCK-20261002",
+      "kind": "模拟面试",
+      "date": "2026-10-02",
+      "company": null,
+      "count_unit": "一场模拟，不计真实公司面试频次",
+      "source_ref": "local://source/S-EVENTS#MOCK-20261002"
+    },
+    {
+      "id": "MOCK-20261017",
+      "kind": "模拟面试",
+      "date": "2026-10-17",
+      "company": null,
+      "count_unit": "52项为复盘原子项，不是52场或52道独立考题",
+      "source_ref": "local://source/S-EVENTS#MOCK-20261017"
+    },
+    {
+      "id": "USER20-DATE-UNKNOWN",
+      "kind": "用户提供的既往面试回忆",
+      "date": null,
+      "company": null,
+      "dedup_status": "日期与是否和其他事件同场未知；保留来源，不强行累加场数",
+      "source_ref": "local://source/S-EVENTS#USER20-DATE-UNKNOWN"
+    },
+    {
+      "id": "REAL-20261018-01",
+      "kind": "真实面试亲历回忆",
+      "date": "2026-10-18",
+      "company": null,
+      "role": "数字IC设计方向；正式岗位名称待核实",
+      "raw_questions": 13,
+      "chains": 5,
+      "actual_answers_available": false,
+      "count_unit": "一场真实面试",
+      "status": "用户报告面试已结束；结果及后续安排未知",
+      "answer_performance": "回答表现待核实",
+      "supplemental_recalled_topics": 1,
+      "source_ref": "local://source/S-EVENTS#REAL-20261018-01",
+      "chain_index": [
+        {
+          "id": "REAL-20261018-01-C1",
+          "title": "AXI项目归属 → 接口选择 → 与AHB-Lite的取舍",
+          "raw_question_ids": [
+            "Q01",
+            "Q02",
+            "Q03"
+          ],
+          "canonical_ids": [
+            "AXI-01",
+            "AXI-13",
+            "AXI-14"
+          ]
+        },
+        {
+          "id": "REAL-20261018-01-C2",
+          "title": "非法写 → 接收/丢弃语义 → 未定义读 → Timeout",
+          "raw_question_ids": [
+            "Q04",
+            "Q05",
+            "Q06",
+            "Q07"
+          ],
+          "canonical_ids": [
+            "AXI-15",
+            "AXI-16",
+            "AXI-17",
+            "AXI-18"
+          ]
+        },
+        {
+          "id": "REAL-20261018-01-C3",
+          "title": "8b/10b原理 → 实际转换 → 一/两种编码 → RD更新",
+          "raw_question_ids": [
+            "Q08",
+            "Q09",
+            "Q10",
+            "Q11"
+          ],
+          "canonical_ids": [
+            "PCIE-07",
+            "PCIE-31",
+            "PCIE-32",
+            "PCIE-33"
+          ]
+        },
+        {
+          "id": "REAL-20261018-01-C4",
+          "title": "PCIe Gray指针CDC；接续编码链的另一主题",
+          "raw_question_ids": [
+            "Q12"
+          ],
+          "canonical_ids": [
+            "PCIE-15"
+          ]
+        },
+        {
+          "id": "REAL-20261018-01-C5",
+          "title": "自定义IP架构与SoC连接；回接AXI整体设计",
+          "raw_question_ids": [
+            "Q13"
+          ],
+          "canonical_ids": [
+            "AXI-01"
+          ]
+        }
+      ],
+      "question_links": [
+        {
+          "event_question_id": "Q01",
+          "chain_id": "REAL-20261018-01-C1",
+          "canonical_ids": [
+            "AXI-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q02",
+          "chain_id": "REAL-20261018-01-C1",
+          "canonical_ids": [
+            "AXI-13"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q03",
+          "chain_id": "REAL-20261018-01-C1",
+          "canonical_ids": [
+            "AXI-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q04",
+          "chain_id": "REAL-20261018-01-C2",
+          "canonical_ids": [
+            "AXI-15"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q05",
+          "chain_id": "REAL-20261018-01-C2",
+          "canonical_ids": [
+            "AXI-16"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q06",
+          "chain_id": "REAL-20261018-01-C2",
+          "canonical_ids": [
+            "AXI-17"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q07",
+          "chain_id": "REAL-20261018-01-C2",
+          "canonical_ids": [
+            "AXI-18"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q08",
+          "chain_id": "REAL-20261018-01-C3",
+          "canonical_ids": [
+            "PCIE-07"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K07"
+          ],
+          "related_projects": [
+            "P02"
+          ],
+          "related_rtl_aliases": [
+            "R002"
+          ]
+        },
+        {
+          "event_question_id": "Q09",
+          "chain_id": "REAL-20261018-01-C3",
+          "canonical_ids": [
+            "PCIE-31"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K07"
+          ],
+          "related_projects": [
+            "P02"
+          ],
+          "related_rtl_aliases": [
+            "R002"
+          ]
+        },
+        {
+          "event_question_id": "Q10",
+          "chain_id": "REAL-20261018-01-C3",
+          "canonical_ids": [
+            "PCIE-32"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K07"
+          ],
+          "related_projects": [
+            "P02"
+          ],
+          "related_rtl_aliases": [
+            "R002"
+          ]
+        },
+        {
+          "event_question_id": "Q11",
+          "chain_id": "REAL-20261018-01-C3",
+          "canonical_ids": [
+            "PCIE-33"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K07"
+          ],
+          "related_projects": [
+            "P02"
+          ],
+          "related_rtl_aliases": [
+            "R002"
+          ]
+        },
+        {
+          "event_question_id": "Q12",
+          "chain_id": "REAL-20261018-01-C4",
+          "canonical_ids": [
+            "PCIE-15"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K07"
+          ],
+          "related_projects": [
+            "P02"
+          ],
+          "related_rtl_aliases": [
+            "R002"
+          ]
+        },
+        {
+          "event_question_id": "Q13",
+          "chain_id": "REAL-20261018-01-C5",
+          "canonical_ids": [
+            "AXI-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "REAL-20261019-01",
+      "kind": "真实面试，用户提供会后整理PDF",
+      "company": null,
+      "role": "数字IC相关；正式岗位/部门待核实",
+      "raw_questions": 27,
+      "actual_answers_available": false,
+      "answer_performance": "回答表现待核实",
+      "count_unit": "一场真实面试；27个整理条目不算27场；与10月18日事件分别保留，不因重复主题合并",
+      "date": "2026-10-19",
+      "ingested_on": "2026-10-20",
+      "chains": 8,
+      "source_ref": "local://source/S-EVENTS#REAL-20261019-01",
+      "chain_index": [
+        {
+          "id": "REAL-20261019-01-C1",
+          "title": "核心归属 → 重复减法 → 是否逐商位",
+          "raw_question_ids": [
+            "Q01",
+            "Q02",
+            "Q03"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C2",
+          "title": "多商位迭代 → Radix-4 / SRT冗余商数字",
+          "raw_question_ids": [
+            "Q04",
+            "Q05"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C3",
+          "title": "课程背景 → 软件用途 → BRAM与系统架构",
+          "raw_question_ids": [
+            "Q06",
+            "Q07"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C4",
+          "title": "原6条SVA → 多拍AR/R → 传输完成 → 关联与白板代码 → 验证边界",
+          "raw_question_ids": [
+            "Q08",
+            "Q09",
+            "Q10",
+            "Q11",
+            "Q12",
+            "Q13"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C5",
+          "title": "Dispatch阶段 → 前端与贡献 → Rename → ROB → 数量 → CFC",
+          "raw_question_ids": [
+            "Q14",
+            "Q15",
+            "Q16",
+            "Q17",
+            "Q18",
+            "Q19"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C6",
+          "title": "恢复时机 → Ready与Commit → 跨结构Flush → 标识与环形年龄 → checkpoint时机",
+          "raw_question_ids": [
+            "Q20",
+            "Q21",
+            "Q22",
+            "Q23",
+            "Q24",
+            "Q25"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C7",
+          "title": "真实BPB → Bimodal状态更新",
+          "raw_question_ids": [
+            "Q26"
+          ]
+        },
+        {
+          "id": "REAL-20261019-01-C8",
+          "title": "候选人反问 → 新人项目口头信息",
+          "raw_question_ids": [
+            "Q27"
+          ]
+        }
+      ],
+      "question_links": [
+        {
+          "event_question_id": "Q01",
+          "chain_id": "REAL-20261019-01-C1",
+          "canonical_ids": [
+            "AXI-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q02",
+          "chain_id": "REAL-20261019-01-C1",
+          "canonical_ids": [
+            "AXI-06"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q03",
+          "chain_id": "REAL-20261019-01-C1",
+          "canonical_ids": [
+            "AXI-06"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q04",
+          "chain_id": "REAL-20261019-01-C2",
+          "canonical_ids": [
+            "AXI-19"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q05",
+          "chain_id": "REAL-20261019-01-C2",
+          "canonical_ids": [
+            "AXI-19"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q06",
+          "chain_id": "REAL-20261019-01-C3",
+          "canonical_ids": [
+            "AXI-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q07",
+          "chain_id": "REAL-20261019-01-C3",
+          "canonical_ids": [
+            "AXI-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q08",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "AXI-08"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K11"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q09",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "AXI-20"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q10",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "AXI-07"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q11",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "AXI-20"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q12",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "RTL-REAL-20261019-SVA-01"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [],
+          "related_projects": [],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q13",
+          "chain_id": "REAL-20261019-01-C4",
+          "canonical_ids": [
+            "AXI-08",
+            "AXI-20"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K06",
+            "K11"
+          ],
+          "related_projects": [
+            "P01"
+          ],
+          "related_rtl_aliases": [
+            "R005"
+          ]
+        },
+        {
+          "event_question_id": "Q14",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-11"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q15",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-10",
+            "TOM-11"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q16",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-01",
+            "TOM-02"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q17",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-04"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q18",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-12"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q19",
+          "chain_id": "REAL-20261019-01-C5",
+          "canonical_ids": [
+            "TOM-13"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q20",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-05",
+            "TOM-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q21",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-04",
+            "TOM-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q22",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q23",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q24",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-14"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q25",
+          "chain_id": "REAL-20261019-01-C6",
+          "canonical_ids": [
+            "TOM-13"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q26",
+          "chain_id": "REAL-20261019-01-C7",
+          "canonical_ids": [
+            "TOM-09"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K08"
+          ],
+          "related_projects": [
+            "P04"
+          ],
+          "related_rtl_aliases": []
+        },
+        {
+          "event_question_id": "Q27",
+          "chain_id": "REAL-20261019-01-C8",
+          "canonical_ids": [
+            "BASE-17"
+          ],
+          "answer_performance": "回答表现待核实",
+          "categories": [
+            "K11"
+          ],
+          "related_projects": [],
+          "related_rtl_aliases": []
+        }
+      ]
+    },
+    {
+      "id": "MOCK-20261021-DUAL-01",
+      "kind": "每日双模拟训练，进行中",
+      "date": "2026-10-21",
+      "company": null,
+      "role": "模拟海思图灵CPU/数字IC及通用ASIC/RTL，不冒充真实公司面试",
+      "count_unit": "一场模拟训练，不计海思真实面试出现次数",
+      "status": "round1 Q01 awaiting answer",
+      "actual_answers_available": false,
+      "score": null,
+      "source_ref": "local://source/S-EVENTS#MOCK-20261021-DUAL-01"
+    }
+  ],
+  "counts": {
+    "canonical_knowledge": 134,
+    "written_variants": 40,
+    "legacy_handbook_candidates": 96,
+    "mock_review_atoms": 52,
+    "rtl_mothers": 43,
+    "rtl_variants": 24,
+    "projects": 6,
+    "legacy_project_units": 8,
+    "legacy_evidence_ledger_entries": 78,
+    "huawei_source_records": 40,
+    "huawei_source_class_counts": {
+      "mixed_personal_advice": 3,
+      "personal_technical": 21,
+      "personal_mixed_role": 4,
+      "personal_process": 5,
+      "reported_images": 1,
+      "knowledge_summary": 1,
+      "limited_text": 1,
+      "personal_theme_only": 1,
+      "reported_collection": 2,
+      "reported_reprint": 1
+    },
+    "legacy_url_index_entries": 59,
+    "canonical_public_source_urls": 60,
+    "historical_event_records": 6,
+    "definite_real_interview_events": 2,
+    "confirmed_mock_dates": 2,
+    "ongoing_mock_records": 1,
+    "uncertain_date_recollections": 1,
+    "shared_repo_tracked_files": 48,
+    "legacy_file_count": 656,
+    "legacy_file_bytes": 51687219,
+    "nonempty_exact_hash_duplicate_groups": 88,
+    "extra_reference_rtl_modules": 15,
+    "source_catalog_rows": 189,
+    "assessment_records": 395,
+    "missing_indexed_source_rows": 3,
+    "missing_unique_local_paths": 2,
+    "project_audit_documents": 10,
+    "authoritative_project_cheatsheets": 8,
+    "public_project_readmes": 6,
+    "canonical_question_categories": {
+      "K01": 2,
+      "K02": 4,
+      "K03": 3,
+      "K04": 6,
+      "K05": 7,
+      "K06": 20,
+      "K07": 26,
+      "K08": 41,
+      "K09": 9,
+      "K10": 8,
+      "K11": 8
+    },
+    "duplicate_canonical_question_ids": 0,
+    "exact_duplicate_canonical_titles": 0
+  },
+  "dedup_policy": "Exact URL/hash dedup only. Semantic overlap is TO_REVIEW. No merged event counts."
+}
