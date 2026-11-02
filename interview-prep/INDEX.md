@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**R001首稿编译FAIL（exit8），等待本人语法修正**。功能仿真NOT_TESTED；391项UNASSESSED、2项REVIEW、2项LEARNING（RTL母题/变式指向同一次练习）。
+当前：**R001修订后编译/自检PASS，R001-ORAL-01待答**。391项UNASSESSED、4项REVIEW（RTL母题/变式指向同一练习），无MASTERED；前两次失败保留。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)

@@ -6724,9 +6724,9 @@
       "id": "RTL-04",
       "title": "同步FIFO",
       "kind": "rtl_mother",
-      "mastery_status": "LEARNING",
+      "mastery_status": "REVIEW",
       "last_assessed": "2026-11-02",
-      "next_review": null,
+      "next_review": "2026-11-03",
       "previous_status": "重写02修正版静态检查未发现问题；尚未编译/仿真，完整独立验证待完成",
       "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL专项题库_权威数据_V0.3.json#RTL-04",
       "evidence": [],
@@ -6737,12 +6737,12 @@
       "source_type": "公开亲历原题+候选教学约束",
       "historical_test_summary": "run01复位FAIL保留；run02 compile exit0有warning、simulation exit0 PASS",
       "historical_test_ref": "S-RTL",
-      "test_status": "NOT_TESTED",
+      "test_status": "PASS",
       "user_independent_pass_this_round": false,
       "current_attempt": {
         "id": "RTL-04-BASE-V2-20261102",
         "alias": "R001",
-        "status": "AWAITING_USER_SYNTAX_FIX",
+        "status": "CORRECTED_CODE_TESTS_PASS_AWAITING_ORAL_AND_RETEST",
         "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
         "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
         "prior_exposure_retained": true,
@@ -6760,23 +6760,30 @@
         },
         "source_sha256": "1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4",
         "first_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/01_first_submitted/sync_fifo8.sv",
-        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/01_first_compile/result.json",
-        "compile_status": "FAIL",
-        "compiler_exit_code": 8,
-        "simulation_status": "NOT_TESTED",
-        "assistant_modified_learner_code": false
+        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
+        "compile_status": "PASS",
+        "compiler_exit_code": 0,
+        "simulation_status": "PASS",
+        "assistant_modified_learner_code": false,
+        "latest_source_sha256": "8cb9597a1232f3bd60b306b37d9af00991b4d724e7758838a1ab9cec522a36a7",
+        "latest_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/03_user_revision02/sync_fifo8.sv",
+        "tb_compile_warning_count": 1,
+        "simulation_exit_code": 0,
+        "testbench_author": "Codex",
+        "runner": "Codex",
+        "first_attempt_pass": false
       },
-      "compile_status": "FAIL",
-      "simulation_status": "NOT_TESTED",
-      "assessment_note": "收到有一次概念提示后的完整首稿；已留原样快照，实际编译退出8。当前修语法/命名，未验证功能，不授予实现通过。"
+      "compile_status": "PASS",
+      "simulation_status": "PASS",
+      "assessment_note": "本人经概念/语法反馈修订DUT后，通过Codex参考队列自检：8组/1153周期/6915检查。TB与命令由Codex完成，首两次编译失败保留，尚待口述/无提示复测；仅标准8×8合同，不代表其他变式通过。"
     },
     {
       "id": "RTL-04-BASE",
       "title": "标准同步FIFO",
       "kind": "rtl_variant",
-      "mastery_status": "LEARNING",
+      "mastery_status": "REVIEW",
       "last_assessed": "2026-11-02",
-      "next_review": null,
+      "next_review": "2026-11-03",
       "previous_status": "指导后实现/修复/整体口述通过当前检查；变化题与无提示完整复测仍待",
       "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL专项题库_权威数据_V0.3.json#RTL-04-BASE",
       "evidence": [
@@ -6797,6 +6804,46 @@
           "compile_status": "FAIL",
           "compiler_exit_code": 8,
           "simulation_status": "NOT_TESTED"
+        },
+        {
+          "id": "RTL04-V2-20261102-COMPILE02",
+          "date": "2026-11-02",
+          "kind": "learner_revision_and_actual_compile",
+          "observation": "修订快照已留；仅剩wr_ptr未声明导致3处编译绑定错误。",
+          "source_sha256": "f8845533794c817f932d20f2da06be34b63f892547ea28867c907d860e2c60af",
+          "artifact_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/02_revision01_compile/result.json",
+          "compile_status": "FAIL",
+          "compiler_exit_code": 3,
+          "simulation_status": "NOT_TESTED"
+        },
+        {
+          "id": "RTL04-V2-20261102-VALIDATION03",
+          "date": "2026-11-02",
+          "kind": "corrected_learner_code_actual_selfcheck",
+          "source_sha256": "8cb9597a1232f3bd60b306b37d9af00991b4d724e7758838a1ab9cec522a36a7",
+          "testbench_sha256": "66cfccfa9a8e24fc57eed26e34bffc0f86701d1f32f5a33705968ca489628565",
+          "vcd_sha256": "1e704bb7668e1529155e102a15df0bb64eec149cfed722c3950d6e35b9bb951e",
+          "artifact_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
+          "compile_status": "PASS",
+          "simulation_status": "PASS",
+          "stats": {
+            "groups": 8,
+            "cycles": 1153,
+            "checks": 6915,
+            "writes": 555,
+            "reads": 516,
+            "resets": 11,
+            "full_blocked": 25,
+            "empty_blocked": 56,
+            "empty_rw": 28,
+            "full_rw": 14,
+            "mid_rw": 229,
+            "occupancy_mask": "1ff",
+            "seed": "c0dec0de"
+          },
+          "tb_compile_warning_count": 1,
+          "testbench_author": "Codex",
+          "not_first_attempt_pass": true
         }
       ],
       "parent_id": "RTL-04",
@@ -6809,12 +6856,12 @@
         "H20-N01"
       ],
       "source_spec_status": "未披露的接口/复位/时序在开练时明确为教学约束，不能冒充原题",
-      "test_status": "NOT_TESTED",
+      "test_status": "PASS",
       "user_independent_pass_this_round": false,
       "current_attempt": {
         "id": "RTL-04-BASE-V2-20261102",
         "alias": "R001",
-        "status": "AWAITING_USER_SYNTAX_FIX",
+        "status": "CORRECTED_CODE_TESTS_PASS_AWAITING_ORAL_AND_RETEST",
         "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
         "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
         "prior_exposure_retained": true,
@@ -6832,15 +6879,49 @@
         },
         "source_sha256": "1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4",
         "first_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/01_first_submitted/sync_fifo8.sv",
-        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/01_first_compile/result.json",
-        "compile_status": "FAIL",
-        "compiler_exit_code": 8,
-        "simulation_status": "NOT_TESTED",
-        "assistant_modified_learner_code": false
+        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
+        "compile_status": "PASS",
+        "compiler_exit_code": 0,
+        "simulation_status": "PASS",
+        "assistant_modified_learner_code": false,
+        "latest_source_sha256": "8cb9597a1232f3bd60b306b37d9af00991b4d724e7758838a1ab9cec522a36a7",
+        "latest_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/03_user_revision02/sync_fifo8.sv",
+        "tb_compile_warning_count": 1,
+        "simulation_exit_code": 0,
+        "testbench_author": "Codex",
+        "runner": "Codex",
+        "first_attempt_pass": false
       },
-      "compile_status": "FAIL",
-      "simulation_status": "NOT_TESTED",
-      "assessment_note": "收到有一次概念提示后的完整首稿；已留原样快照，实际编译退出8。当前修语法/命名，未验证功能，不授予实现通过。"
+      "compile_status": "PASS",
+      "simulation_status": "PASS",
+      "assessment_note": "本人经概念/语法反馈修订DUT后，通过Codex参考队列自检：8组/1153周期/6915检查。TB与命令由Codex完成，首两次编译失败保留，尚待口述/无提示复测；仅标准8×8合同，不代表其他变式通过。",
+      "review_schedule": [
+        {
+          "after_days": 1,
+          "date": "2026-11-03",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 3,
+          "date": "2026-11-05",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 7,
+          "date": "2026-11-09",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 14,
+          "date": "2026-11-16",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 30,
+          "date": "2026-12-02",
+          "status": "PLANNED_NOT_COMPLETED"
+        }
+      ]
     },
     {
       "id": "RTL-04-OVERFLOW",

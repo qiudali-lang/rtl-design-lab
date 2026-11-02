@@ -29,3 +29,7 @@
 2026-11-02 / RTL04-V2-WIDTH01：本人概念提示后正确回答指针3/3、used4位与0..8范围；仅设计口述检查，完整DUT待提交，RTL状态仍UNASSESSED，未编译仿真。
 
 2026-11-02 / RTL04-V2-SUBMIT01：收到完整首稿并原样快照，源码SHA256 1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4。Icarus实际编译exit8 FAIL，功能仿真NOT_TESTED；端口、比较运算与命名拼写三类反馈，待本人修正，未代改。
+
+2026-11-02 / RTL04-V2-SUBMIT02：修订原样留存，前次多数问题已改；第12行wt_ptr仍与使用wr_ptr不一致。实际编译exit3 FAIL，功能仿真NOT_TESTED，未代改。
+
+2026-11-02 / RTL04-V2-SUBMIT03：本人修正后快照已留；DUT单编译exit0无警告，带Codex TB编译exit0/1条timescale提示，VVP exit0，8组/1153周期/6915检查PASS。源码未被助手改动；保留前两次编译失败。状态REVIEW，接R001-ORAL-01，非首次独立通过。
