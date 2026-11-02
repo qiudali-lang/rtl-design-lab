@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "date": "2026-11-01",
-  "phase": "PHASE_1_WAITING_FOR_FIRST_ANSWER",
+  "date": "2026-11-02",
+  "phase": "PHASE_1_BASE09_PENDING",
   "training_minutes": 0,
-  "assessments_this_cycle": 0,
+  "assessments_this_cycle": 4,
   "test_status": "NOT_TESTED",
   "test_note": "Only inventory/hash/link/schema checks; no RTL, gem5, SPICE or hardware runs. Historical test outcomes stay in legacy evidence.",
   "counts": {
@@ -70,11 +70,14 @@
     "state": "PARKED_NOT_FAILED",
     "evidence_ref": "S-STATE"
   },
-  "next_action": "Wait for Lucas independent answer to BASE-06; no answer supplied yet",
+  "next_action": "Wait for BASE-09-COMB-01 independent answer on combinational assignment completeness",
   "next_candidate": {
-    "canonical_id": "BASE-06",
-    "category": "K01",
-    "topic": "blocking/nonblocking and old-value clocked semantics",
+    "canonical_id": "BASE-09",
+    "diagnostic_slice": "BASE-09-COMB-01",
+    "categories": [
+      "K01",
+      "K02"
+    ],
     "status": "PREPARED_FOR_NEXT_ASSISTANT_MESSAGE",
     "answer_available": false,
     "spec_ref": "training/current_tasks.md"
@@ -82,14 +85,36 @@
   "git": {
     "base_commit": "c9cade730dd6d1bd238fa12184aa53a2f5e32fc6",
     "phase0_commit": "988f9bd7248e14d8d02d46cb85901bab7e10900a",
-    "last_verified_push_commit": "988f9bd7248e14d8d02d46cb85901bab7e10900a",
+    "last_verified_push_commit": "2f62fbc5c6da10cfd1fbbcadce94573f92d0ba23",
     "last_verified_push_branch": "main",
     "last_verified_push_result": "PASS",
     "remote_contains_phase0": true,
     "receipt_convention": "This receipt documents the previous verified push; obtain the containing/latest commit from git history."
   },
-  "updated_utc": "2026-11-02T06:13:34.428207+00:00",
+  "updated_utc": "2026-11-02T09:34:57.825893+00:00",
   "daily_budget_minutes": 150,
-  "completed_questions_this_cycle": 0,
-  "daily_training_policy": "Foundation + learner RTL + project deep dive, adaptive to evidence; not mechanical traversal of all 395 records. No tool/wait time counted as study."
+  "completed_questions_this_cycle": 1,
+  "daily_training_policy": "Foundation + learner RTL + project deep dive, adaptive to evidence; not mechanical traversal of all 395 records. No tool/wait time counted as study.",
+  "mastery_distribution": {
+    "UNASSESSED": 394,
+    "REVIEW": 1
+  },
+  "time_accounting_note": "No measured study duration yet; do not infer time from reply gaps or tool runtime.",
+  "sync_policy": "User-authorized review/commit/push at unit/session milestones. Last verified receipt refers to a prior actual push; obtain latest containing commit from Git history.",
+  "due_reviews": [
+    {
+      "id": "BASE-06",
+      "date": "2026-11-03",
+      "mode": "independent_unseen_variation",
+      "status": "PLANNED_NOT_COMPLETED"
+    }
+  ],
+  "last_completed_unit": {
+    "id": "BASE-06",
+    "status": "REVIEW",
+    "independent_initial_numeric_answer_correct": true,
+    "independent_blocking_order_followup_correct": true,
+    "nba_restatement_assisted": true,
+    "completed_date": "2026-11-02"
+  }
 }
