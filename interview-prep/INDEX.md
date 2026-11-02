@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**Phase1 / R001同步FIFO独立代码待提交**。BASE-06与BASE-09已测子技能均REVIEW，2026-11-03无提示复测；393项UNASSESSED、2项REVIEW，无MASTERED。
+当前：**R001首稿编译FAIL（exit8），等待本人语法修正**。功能仿真NOT_TESTED；391项UNASSESSED、2项REVIEW、2项LEARNING（RTL母题/变式指向同一次练习）。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)

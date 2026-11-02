@@ -6724,8 +6724,8 @@
       "id": "RTL-04",
       "title": "同步FIFO",
       "kind": "rtl_mother",
-      "mastery_status": "UNASSESSED",
-      "last_assessed": null,
+      "mastery_status": "LEARNING",
+      "last_assessed": "2026-11-02",
       "next_review": null,
       "previous_status": "重写02修正版静态检查未发现问题；尚未编译/仿真，完整独立验证待完成",
       "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL专项题库_权威数据_V0.3.json#RTL-04",
@@ -6742,24 +6742,63 @@
       "current_attempt": {
         "id": "RTL-04-BASE-V2-20261102",
         "alias": "R001",
-        "status": "AWAITING_USER_CODE",
+        "status": "AWAITING_USER_SYNTAX_FIX",
         "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
         "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
         "prior_exposure_retained": true,
         "no_scaffold_this_attempt": true,
-        "test_status": "NOT_TESTED"
-      }
+        "test_status": "NOT_TESTED",
+        "conceptual_hint_requested": true,
+        "assistance_notes": "用户主动要思路：给结构与行为分解，不给完整RTL/内部代码框架；不能计全程无提示首版。",
+        "provided_reference_rtl": false,
+        "width_check": {
+          "write_pointer_bits": 3,
+          "read_pointer_bits": 3,
+          "occupancy_bits": 4,
+          "result": "ORAL_CORRECT_AFTER_CONCEPTUAL_HINT",
+          "not_implementation_pass": true
+        },
+        "source_sha256": "1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4",
+        "first_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/01_first_submitted/sync_fifo8.sv",
+        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/01_first_compile/result.json",
+        "compile_status": "FAIL",
+        "compiler_exit_code": 8,
+        "simulation_status": "NOT_TESTED",
+        "assistant_modified_learner_code": false
+      },
+      "compile_status": "FAIL",
+      "simulation_status": "NOT_TESTED",
+      "assessment_note": "收到有一次概念提示后的完整首稿；已留原样快照，实际编译退出8。当前修语法/命名，未验证功能，不授予实现通过。"
     },
     {
       "id": "RTL-04-BASE",
       "title": "标准同步FIFO",
       "kind": "rtl_variant",
-      "mastery_status": "UNASSESSED",
-      "last_assessed": null,
+      "mastery_status": "LEARNING",
+      "last_assessed": "2026-11-02",
       "next_review": null,
       "previous_status": "指导后实现/修复/整体口述通过当前检查；变化题与无提示完整复测仍待",
       "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL专项题库_权威数据_V0.3.json#RTL-04-BASE",
-      "evidence": [],
+      "evidence": [
+        {
+          "id": "RTL04-V2-20261102-WIDTH01",
+          "date": "2026-11-02",
+          "kind": "design_oral_check",
+          "observation": "概念提示后正确给出3/3/4位宽及used范围0至8。",
+          "test_status": "NOT_TESTED"
+        },
+        {
+          "id": "RTL04-V2-20261102-COMPILE01",
+          "date": "2026-11-02",
+          "kind": "learner_submission_and_actual_compile",
+          "observation": "首稿原样留存；端口/比较表达式编译失败，静态另见命名与default拼写问题；等待本人修正。",
+          "source_sha256": "1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4",
+          "artifact_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/01_first_compile/result.json",
+          "compile_status": "FAIL",
+          "compiler_exit_code": 8,
+          "simulation_status": "NOT_TESTED"
+        }
+      ],
       "parent_id": "RTL-04",
       "priority": "P0",
       "aliases": [],
@@ -6775,13 +6814,33 @@
       "current_attempt": {
         "id": "RTL-04-BASE-V2-20261102",
         "alias": "R001",
-        "status": "AWAITING_USER_CODE",
+        "status": "AWAITING_USER_SYNTAX_FIX",
         "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
         "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
         "prior_exposure_retained": true,
         "no_scaffold_this_attempt": true,
-        "test_status": "NOT_TESTED"
-      }
+        "test_status": "NOT_TESTED",
+        "conceptual_hint_requested": true,
+        "assistance_notes": "用户主动要思路：给结构与行为分解，不给完整RTL/内部代码框架；不能计全程无提示首版。",
+        "provided_reference_rtl": false,
+        "width_check": {
+          "write_pointer_bits": 3,
+          "read_pointer_bits": 3,
+          "occupancy_bits": 4,
+          "result": "ORAL_CORRECT_AFTER_CONCEPTUAL_HINT",
+          "not_implementation_pass": true
+        },
+        "source_sha256": "1a5d352c6dc2d017968723fd17df439774969af751dce170d05579af49fd86f4",
+        "first_snapshot_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/snapshots/01_first_submitted/sync_fifo8.sv",
+        "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/01_first_compile/result.json",
+        "compile_status": "FAIL",
+        "compiler_exit_code": 8,
+        "simulation_status": "NOT_TESTED",
+        "assistant_modified_learner_code": false
+      },
+      "compile_status": "FAIL",
+      "simulation_status": "NOT_TESTED",
+      "assessment_note": "收到有一次概念提示后的完整首稿；已留原样快照，实际编译退出8。当前修语法/命名，未验证功能，不授予实现通过。"
     },
     {
       "id": "RTL-04-OVERFLOW",
