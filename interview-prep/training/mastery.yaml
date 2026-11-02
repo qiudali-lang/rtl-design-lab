@@ -2,7 +2,7 @@
   "schema_version": 2,
   "assessment_cycle": "V2-20261101",
   "initialized": "2026-11-02T06:01:16.322704+00:00",
-  "phase": "PHASE_1_BASE09_PENDING",
+  "phase": "PHASE_1_R001_RTL_DIAGNOSTIC_PENDING",
   "state_policy": "All imported records were initially UNASSESSED. New grades require actual learner evidence; historical statuses remain intact.",
   "yaml_format": "JSON-compatible YAML 1.2; parseable using JSON without extra dependencies.",
   "categories": {
@@ -3069,12 +3069,51 @@
       "id": "BASE-09",
       "title": "FSM怎样避免组合latch与状态失控？",
       "kind": "canonical_question",
-      "mastery_status": "UNASSESSED",
-      "last_assessed": null,
-      "next_review": null,
+      "mastery_status": "REVIEW",
+      "last_assessed": "2026-11-02",
+      "next_review": "2026-11-03",
       "previous_status": "待复习/独立复测待安排",
       "source_ref": "local://legacy/02_综合高频题库/统一题库_权威数据_V0.4.json#BASE-09",
-      "evidence": [],
+      "evidence": [
+        {
+          "id": "BASE09-20261102-A01",
+          "date": "2026-11-02",
+          "kind": "independent_answer",
+          "observation": "正确判断en=0时保持y，推断锁存器；理由指向缺少else，该场景成立。",
+          "hints": 0,
+          "test_status": "NOT_TESTED"
+        },
+        {
+          "id": "BASE09-20261102-F01",
+          "date": "2026-11-02",
+          "kind": "variation_after_principle_clarification",
+          "observation": "默认赋值变式正确判断不推断锁存器，en=0时0、en=1时d。",
+          "hints_during_followup": 0,
+          "test_status": "NOT_TESTED"
+        },
+        {
+          "id": "BASE09-20261102-F02",
+          "date": "2026-11-02",
+          "kind": "independent_followup",
+          "observation": "en=0保持判断正确；硬件类型误判锁存器，应为边沿触发的使能寄存器。",
+          "hints": 0,
+          "test_status": "NOT_TESTED"
+        },
+        {
+          "id": "BASE09-20261102-RESTATE01",
+          "date": "2026-11-02",
+          "kind": "assisted_restatement",
+          "observation": "使能D触发器与en=0保持正确；en=1时说更新为1，需明确采样的是d。",
+          "test_status": "NOT_TESTED"
+        },
+        {
+          "id": "BASE09-20261102-RESTATE02",
+          "date": "2026-11-02",
+          "kind": "assisted_restatement",
+          "observation": "在针对性纠正后，准确说明en=1时q在上升沿采样d。",
+          "test_status": "NOT_TESTED"
+        }
+      ],
       "category": "K02",
       "related_projects": [],
       "priority": "P0",
@@ -3084,7 +3123,46 @@
         "AX-CORE"
       ],
       "history_ref": "S-PROGRESS / S-LEGACY-TRACK",
-      "category_mapping": "INITIAL_TAGGING_TO_REVIEW"
+      "category_mapping": "INITIAL_TAGGING_TO_REVIEW",
+      "assessment_note": "组合不完整赋值与默认赋值正确；曾将时序块判为锁存器、将采样d说成固定1，均在讲解后正确复述。当前子技能学习检查结束，REVIEW；FSM非法状态等父题其余范围未测。",
+      "current_followup": null,
+      "subskills": {
+        "incomplete_combinational_assignment": "INITIAL_INDEPENDENT_CORRECT",
+        "default_assignment_variation": "CORRECT_AFTER_PRINCIPLE_CLARIFICATION",
+        "fsm_illegal_state": "UNASSESSED",
+        "clocked_hold_comparison": "CORRECT_AFTER_EXPLANATION_RETEST_DUE",
+        "enable_vs_data": "CORRECT_AFTER_EXPLANATION_RETEST_DUE"
+      },
+      "review_schedule": [
+        {
+          "after_days": 1,
+          "date": "2026-11-03",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 3,
+          "date": "2026-11-05",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 7,
+          "date": "2026-11-09",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 14,
+          "date": "2026-11-16",
+          "status": "PLANNED_NOT_COMPLETED"
+        },
+        {
+          "after_days": 30,
+          "date": "2026-12-02",
+          "status": "PLANNED_NOT_COMPLETED"
+        }
+      ],
+      "review_scope": "组合赋值完整性、边沿触发保持、使能与采样数据",
+      "unit_status": "ASSIGNMENT_AND_HOLD_SLICE_COMPLETED_RETEST_DUE",
+      "parent_question_full_scope_completed": false
     },
     {
       "id": "BASE-10",
@@ -6660,7 +6738,17 @@
       "historical_test_summary": "run01复位FAIL保留；run02 compile exit0有warning、simulation exit0 PASS",
       "historical_test_ref": "S-RTL",
       "test_status": "NOT_TESTED",
-      "user_independent_pass_this_round": false
+      "user_independent_pass_this_round": false,
+      "current_attempt": {
+        "id": "RTL-04-BASE-V2-20261102",
+        "alias": "R001",
+        "status": "AWAITING_USER_CODE",
+        "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
+        "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
+        "prior_exposure_retained": true,
+        "no_scaffold_this_attempt": true,
+        "test_status": "NOT_TESTED"
+      }
     },
     {
       "id": "RTL-04-BASE",
@@ -6683,7 +6771,17 @@
       ],
       "source_spec_status": "未披露的接口/复位/时序在开练时明确为教学约束，不能冒充原题",
       "test_status": "NOT_TESTED",
-      "user_independent_pass_this_round": false
+      "user_independent_pass_this_round": false,
+      "current_attempt": {
+        "id": "RTL-04-BASE-V2-20261102",
+        "alias": "R001",
+        "status": "AWAITING_USER_CODE",
+        "source_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断",
+        "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv",
+        "prior_exposure_retained": true,
+        "no_scaffold_this_attempt": true,
+        "test_status": "NOT_TESTED"
+      }
     },
     {
       "id": "RTL-04-OVERFLOW",

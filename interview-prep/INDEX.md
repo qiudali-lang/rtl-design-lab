@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**Phase1 / BASE-09-COMB-01待独立回答**。BASE-06讲解后复述正确，REVIEW，2026-11-03无提示复测；其他394项UNASSESSED。
+当前：**Phase1 / R001同步FIFO独立代码待提交**。BASE-06与BASE-09已测子技能均REVIEW，2026-11-03无提示复测；393项UNASSESSED、2项REVIEW，无MASTERED。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)
