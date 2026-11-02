@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**Phase0盘点完成，等待“开始摸底”**。新轮测评记录均为UNASSESSED；没有开始考试或新RTL验证。
+当前：**Phase1第一题 BASE-06，等待独立回答**。用户已确认Phase0并批准同步；新轮记录仍均UNASSESSED，没有已完成考核或新RTL验证。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)

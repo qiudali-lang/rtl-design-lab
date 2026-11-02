@@ -2,7 +2,7 @@
   "schema_version": 2,
   "assessment_cycle": "V2-20261101",
   "initialized": "2026-11-02T06:01:16.322704+00:00",
-  "phase": "PHASE_0_COMPLETE_WAITING_FOR_START",
+  "phase": "PHASE_1_WAITING_FOR_FIRST_ANSWER",
   "state_policy": "Every imported assessable record is UNASSESSED. Historical status is evidence, not a new grade. No training occurred.",
   "yaml_format": "JSON-compatible YAML 1.2; parseable using JSON without extra dependencies.",
   "categories": {

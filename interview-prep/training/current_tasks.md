@@ -1,8 +1,25 @@
-# 当前唯一任务
+# 当前题：K01 / BASE-06
 
-等待用户审阅Phase0结果及Diff；不开始训练，不commit/push。
+日期：2026-11-01（America/Los_Angeles）。Phase1第一题，先独立回答，不提供答案。下面A、B是两个独立例子。
 
-- 已做：本地索引/仓库来源盘点、去重计数、旧证据快照、新轮UNASSESSED、交接与同步边界。
-- 待用户说“开始摸底”：从K01 / 既有BASE-06开始基础语义诊断，先本人答。
-- 未做：新RTL编码、仿真、综合、gem5/SPICE重跑、板测、训练评分。
-- 原AXI-FLOW-02→03及RTL-22挂起保留；不是失败，也不自动恢复旧90分钟或固定双模拟课表。
+假设时钟上升沿前 `a=0、b=0、din=1`，三个信号均为1bit，`din`在该边沿附近稳定。
+
+**A**
+```systemverilog
+always @(posedge clk) begin
+    a <= din;
+    b <= a;
+end
+```
+
+**B**
+```systemverilog
+always @(posedge clk) begin
+    a = din;
+    b = a;
+end
+```
+
+这个上升沿的所有赋值更新完成后，A和B中的 `a、b` 分别是多少？请解释判断依据。
+
+状态：题面已准备，随下一条助手消息展示；等待本人独立回答。没有答题记录、提示或评分，BASE-06仍为UNASSESSED。不是独立RTL设计提交，未进行新仿真。
