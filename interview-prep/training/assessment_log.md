@@ -39,3 +39,5 @@
 2026-11-02 / R001-LOCAL-TOOLS：用户希望自己编译；配置本题VS Code三个任务并验证对应编译/仿真命令PASS，actor为Codex设置检查；尚无用户亲自运行证据，不新增成绩/掌握。
 
 2026-11-02 / R001-LOCAL-COMPILE01：本人提交VS Code编译成功截图，与本地运行结果匹配，DUT编译exit 0；功能仿真NOT_TESTED。原运行actor字段不改，另存截图确认。下一步R001-LOCAL-SIM01等本人自检仿真输出，不增加掌握或课时。
+
+2026-11-02 / R001-LOCAL-SIM01：本人仿真截图与本地实际stdout/result匹配；编译0、vvp0，8组/1153周期/6915检查PASS。保留timescale提示，TB仍为Codex既有版本；下步本人打开最新波形。未新增助手代跑或掌握成绩。

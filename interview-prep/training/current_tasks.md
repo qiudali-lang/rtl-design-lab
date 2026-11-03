@@ -1,13 +1,13 @@
-# 当前操作：R001-LOCAL-SIM01（本人本地自检仿真）
+# 当前操作：R001-LOCAL-WAVE01（本人打开最新波形）
 
-2026-11-02。本人已在中文VS Code的FIFO练习工作区运行“FIFO: 编译DUT”。用户截图与本题现有运行日志对应，编译exit 0，PASS；这次运行simulation_status=NOT_TESTED。
+2026-11-02。用户已在VS Code运行“FIFO: 编译并自检仿真”，截图与本地20261103T014150_450752Z_simulate日志匹配。编译及vvp退出码均0；8组/1153周期/6915检查PASS。编译保留1条时间单位/精度提示，不声称无警告。
 
 ## 当前只做一步
 
-VS Code顶部“终端→运行任务”，选择“FIFO: 编译并自检仿真”。等待终端结束后反馈实际输出；不由Codex代跑，不提前判通过。
+VS Code“终端→运行任务→FIFO: 打开最新波形”。等待GTKWave窗口打开后反馈截图。此处尚未验证本人打开GUI或读懂波形，不由Codex代操作。
 
-证据：`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T013755_907090Z_compile/learner_confirmation.json`。原result.json的actor=unconfirmed_invoker保留，另用用户截图确认操作者，不篡改原运行日志。
+本人运行的是既有Codex自检TB，不等于本人独立编写TB、覆盖所有情况或完成综合/上板。原result.json的unconfirmed_invoker保持不变，用单独learner_confirmation.json关联用户截图。现有源码未改，没有新代跑仿真。
 
-当前只确认本人工具操作的DUT编译通过，不等于独立编写TB、功能仿真、综合或上板通过。之前Codex的8组/1153周期/6915检查是既有独立记录，本次不重复计入。掌握状态仍REVIEW，无新增题目成绩或课时。
+证据：`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T014150_450752Z_simulate/learner_confirmation.json`。
 
-R001-ORAL-02仍挂起：读后full降低且wr_fire随后变高，为何不能补做同一个上升沿写入？未回答，不判失败，不并行提问。
+R001保持REVIEW；R001-ORAL-02时序因果题仍挂起未答，间隔复测为计划。当前不并行提问，不新增成绩或课时。
