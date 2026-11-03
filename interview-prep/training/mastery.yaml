@@ -6771,7 +6771,29 @@
         "simulation_exit_code": 0,
         "testbench_author": "Codex",
         "runner": "Codex",
-        "first_attempt_pass": false
+        "first_attempt_pass": false,
+        "oral_check_01": {
+          "status": "BEHAVIOR_CORRECT_INDEPENDENT",
+          "write_pointer": "HOLD",
+          "read_pointer": "PLUS_ONE_MOD8",
+          "occupancy": "8_TO_7",
+          "causal_explanation": "PENDING"
+        },
+        "local_tool_setup": {
+          "editor": "VS Code",
+          "compiler": "iverilog",
+          "simulator": "vvp",
+          "wave_viewer": "GTKWave",
+          "task_file_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/.vscode/tasks.json",
+          "guide_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md",
+          "helper_check_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/tool_setup_result.json",
+          "helper_check_actor": "Codex",
+          "helper_compile_check": "PASS",
+          "helper_simulation_check": "PASS",
+          "learner_self_run_confirmed": false,
+          "source_sha256_for_setup_check": "c7b8a7c92cdc79c3f98d5f24d1b6b0ac1602fd6198af74f572d5eb5a3b8a8bee",
+          "not_a_mastery_assessment": true
+        }
       },
       "compile_status": "PASS",
       "simulation_status": "PASS",
@@ -6844,6 +6866,13 @@
           "tb_compile_warning_count": 1,
           "testbench_author": "Codex",
           "not_first_attempt_pass": true
+        },
+        {
+          "id": "R001-20261102-ORAL01",
+          "date": "2026-11-02",
+          "kind": "independent_oral_check",
+          "observation": "满时同时请求：写指针保持、读指针加1、used减1，正确。未展开时序原因。",
+          "hints_before_answer": 0
         }
       ],
       "parent_id": "RTL-04",
@@ -6890,7 +6919,29 @@
         "simulation_exit_code": 0,
         "testbench_author": "Codex",
         "runner": "Codex",
-        "first_attempt_pass": false
+        "first_attempt_pass": false,
+        "oral_check_01": {
+          "status": "BEHAVIOR_CORRECT_INDEPENDENT",
+          "write_pointer": "HOLD",
+          "read_pointer": "PLUS_ONE_MOD8",
+          "occupancy": "8_TO_7",
+          "causal_explanation": "PENDING"
+        },
+        "local_tool_setup": {
+          "editor": "VS Code",
+          "compiler": "iverilog",
+          "simulator": "vvp",
+          "wave_viewer": "GTKWave",
+          "task_file_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/.vscode/tasks.json",
+          "guide_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md",
+          "helper_check_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/tool_setup_result.json",
+          "helper_check_actor": "Codex",
+          "helper_compile_check": "PASS",
+          "helper_simulation_check": "PASS",
+          "learner_self_run_confirmed": false,
+          "source_sha256_for_setup_check": "c7b8a7c92cdc79c3f98d5f24d1b6b0ac1602fd6198af74f572d5eb5a3b8a8bee",
+          "not_a_mastery_assessment": true
+        }
       },
       "compile_status": "PASS",
       "simulation_status": "PASS",

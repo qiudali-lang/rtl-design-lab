@@ -33,3 +33,7 @@
 2026-11-02 / RTL04-V2-SUBMIT02：修订原样留存，前次多数问题已改；第12行wt_ptr仍与使用wr_ptr不一致。实际编译exit3 FAIL，功能仿真NOT_TESTED，未代改。
 
 2026-11-02 / RTL04-V2-SUBMIT03：本人修正后快照已留；DUT单编译exit0无警告，带Codex TB编译exit0/1条timescale提示，VVP exit0，8组/1153周期/6915检查PASS。源码未被助手改动；保留前两次编译失败。状态REVIEW，接R001-ORAL-01，非首次独立通过。
+
+2026-11-02 / R001-ORAL01：满时同拍请求的指针/used变化独立正确，提示0；原因未展开，接ORAL02，检查NBA后组合wr_fire变高为何不能追补本次边沿写入。无新测试。
+
+2026-11-02 / R001-LOCAL-TOOLS：用户希望自己编译；配置本题VS Code三个任务并验证对应编译/仿真命令PASS，actor为Codex设置检查；尚无用户亲自运行证据，不新增成绩/掌握。

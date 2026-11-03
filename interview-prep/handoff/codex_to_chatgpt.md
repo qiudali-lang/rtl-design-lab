@@ -1,22 +1,21 @@
 # Codex → ChatGPT 当前交接
 
-2026-11-02。当前唯一待答：**R001-ORAL-01**。本人修订后的标准同步FIFO通过本次实际编译与自检，等待本人解释满时同拍读写对指针/used的影响；题面见training/current_tasks.md。不要再要求修wt_ptr，已改好。
+2026-11-02。用户新要求：“我有没有本地ide软件，我想自己编译”。当前只等**本人在VS Code运行FIFO编译任务并反馈终端结果**，不再同时追问口述。R001-ORAL-02原题挂起保留，尚未答，不判失败。
 
-## 本次验证事实
+## 已实际完成的本地配置
 
-- 第三次提交，DUT源码SHA256：8cb9597a1232f3bd60b306b37d9af00991b4d724e7758838a1ab9cec522a36a7。助手未改本人DUT；三个原样版本均保留。
-- DUT单编译exit0，无警告；DUT+Codex TB编译exit0，有1条DUT未显式声明时间单位/精度的提示。VVP exit0，**8组、1153周期、6915检查PASS**。
-- 覆盖本次合同的复位/注册读保持、数据队列顺序、空满阻止、三种同拍边界、反复回绕、中途同步复位、固定seed随机请求；占用0..8均命中。不是完整形式证明/覆盖率签核，不包含综合/STA/板测。
-- 本人写/改DUT；Codex给过一次概念提示、语法诊断及一行声明纠正，并编写TB/代跑命令。参考队列只看端口和事务，不读取内部指针/used判定正确性。不能描述为本人独立写了该TB或首稿一次通过。
-- 首稿编译exit8、第一修订exit3仍保留。当前功能PASS对应第二修订的特定源码，不覆盖历史失败。三个最终PNG来自实际VCD，已复核；绘图解析大小写修正是Codex绘图器问题，不计本人DUT缺陷。
-- 本机证据：`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json`；日志、VCD、TB、绘图器、三张图同目录；编写思路.md在该题目录。原始代码/绝对路径/私人原答留本地，不随摘要发布。
+- 核实已安装VS Code、Icarus iverilog/vvp、GTKWave和Vivado 2024.1。当前采用VS Code编辑、Icarus编译/仿真、GTKWave看VCD。
+- 当前练习目录新增.vscode/tasks.json三个任务、run_local.py、本地编译与仿真操作.md。仅本题局部配置，不改DUT/全局PATH/全局编辑器设置。
+- Ctrl+Shift+B默认任务“FIFO: 编译DUT”；“终端→运行任务”另有自检仿真和打开波形。各次运行单独存local_runs时间戳目录，保留源码/TB快照、实际命令、日志、退出码；原验证03不覆盖。
+- Codex已调用新helper验证编译/自检均PASS；actor=assistant_setup_check，不是用户亲自运行。VS Code CLI打开命令返回0，IDE里的实际按钮操作尚未验证；GTKWave版本命令exit0有dbus提示，GUI任务未由Codex检查。
+- 当前源码相比验证03只有缩进/空行变化；设置前后哈希相同，DUT未被Codex改动。新helper检查记录见`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/tool_setup_result.json`；操作说明见同题本地编译与仿真操作.md。
 
-## 掌握与下一步
+## 保留的训练证据
 
-391项UNASSESSED、4项REVIEW（RTL母题/变式同一物理练习），无MASTERED。标准FIFO修订后当前测试PASS，口述/无提示复测未过；其他FIFO变式未测。11月3日复测BASE-06、BASE-09已测子技能和R001，均只是计划。BASE-09其他FSM内容未测。
+标准FIFO修订后既有自检PASS：8组/1153周期/6915检查。前两次编译FAIL、概念与语法辅助、Codex编写TB和代跑命令事实保留。R001口述01行为独立正确，口述02时序原因尚待；状态REVIEW，非首次无提示独立通过。BASE-06/09已测子技能也为REVIEW，明天复测为计划；BASE-09其余FSM内容未测。
 
-每天最多150分钟，实际学习时长未计量；不把聊天间隔、工具耗时当课时。一次一题，当前先等R001口述，不额外抛项目题或完整参考实现。旧AXI走查/RTL-22挂起保留，不判失败。
+当前工具设置不增加考试题/成绩/掌握或学习时长。每天最多150分钟，按实际薄弱点安排；当前先让用户自己操作一次编译，不并行发新项目题/新RTL实现。
 
 ## 同步
 
-最近已核验push：7ab76a07d6b1a56d2d5cfbb7c1586fad84b7cba1（main，首稿失败Review）。本批修订后PASS摘要按用户已授权流程审查后推送，实际承载hash通过Git文件历史取得，不在文件内伪造自身hash。原projects/RTL/TB/README/PROVENANCE不改，项目Cheatsheet不混独立RTL题。
+最近已核验push：d4decf708b91f96a58cccf2e0713be2a7810e825。本批工具操作入口与口述01摘要按已授权流程审查后同步，实际承载hash通过Git历史取得。私有原答/绝对路径/课程原件不发布；原projects/RTL/TB/README/PROVENANCE不改。

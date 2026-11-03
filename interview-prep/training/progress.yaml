@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "date": "2026-11-02",
-  "phase": "PHASE_1_R001_ORAL_PENDING",
+  "phase": "PHASE_1_R001_LEARNER_LOCAL_TOOL_PRACTICE",
   "training_minutes": 0,
-  "assessments_this_cycle": 13,
+  "assessments_this_cycle": 14,
   "test_status": "PASS",
   "test_note": "Corrected DUT passed current Codex self-check TB: 8 groups/1153 cycles/6915 checks; TB compile has one timescale warning. Prior compile failures retained; no synthesis or hardware testing.",
   "counts": {
@@ -70,18 +70,16 @@
     "state": "PARKED_NOT_FAILED",
     "evidence_ref": "S-STATE"
   },
-  "next_action": "Wait for R001 oral check 01: full with simultaneous read/write requests",
+  "next_action": "User opens this exercise folder in VS Code, saves the DUT, and runs default build task Ctrl+Shift+B; wait for actual terminal output",
   "next_candidate": {
     "canonical_id": "RTL-04",
     "variant_id": "RTL-04-BASE",
     "alias": "R001",
-    "task_id": "RTL-04-BASE-V2-20261102",
-    "followup_id": "R001-ORAL-01",
-    "status": "PREPARED_FOR_NEXT_ASSISTANT_MESSAGE",
-    "answer_available": false,
+    "operation_id": "R001-LOCAL-COMPILE01",
+    "status": "WAITING_FOR_LEARNER_LOCAL_COMPILE",
     "spec_ref": "training/current_tasks.md",
-    "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
-    "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv"
+    "guide_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md",
+    "actor_status": "No learner-operated run confirmed; setup checks by Codex only"
   },
   "git": {
     "base_commit": "c9cade730dd6d1bd238fa12184aa53a2f5e32fc6",
@@ -92,7 +90,7 @@
     "remote_contains_phase0": true,
     "receipt_convention": "This receipt documents the previous verified push; obtain the containing/latest commit from git history."
   },
-  "updated_utc": "2026-11-02T22:21:28.551712+00:00",
+  "updated_utc": "2026-11-03T01:17:18.649237+00:00",
   "daily_budget_minutes": 150,
   "completed_questions_this_cycle": 1,
   "daily_training_policy": "Foundation + learner RTL + project deep dive, adaptive to evidence; not mechanical traversal of all 395 records. No tool/wait time counted as study.",
@@ -134,5 +132,18 @@
     "clocked_hardware_and_enable_data_restatements_assisted": true
   },
   "completed_diagnostic_slices_this_cycle": 2,
-  "rtl_submission_count_this_task": 3
+  "rtl_submission_count_this_task": 3,
+  "parked_oral_checkpoint": {
+    "canonical_id": "RTL-04",
+    "variant_id": "RTL-04-BASE",
+    "alias": "R001",
+    "task_id": "RTL-04-BASE-V2-20261102",
+    "followup_id": "R001-ORAL-02",
+    "status": "PREPARED_FOR_NEXT_ASSISTANT_MESSAGE",
+    "answer_available": false,
+    "spec_ref": "training/current_tasks.md",
+    "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
+    "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv"
+  },
+  "local_environment_ready": true
 }

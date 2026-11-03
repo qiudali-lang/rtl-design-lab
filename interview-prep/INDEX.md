@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**R001修订后编译/自检PASS，R001-ORAL-01待答**。391项UNASSESSED、4项REVIEW（RTL母题/变式指向同一练习），无MASTERED；前两次失败保留。
+当前：**R001本地工具操作：等待本人在VS Code运行编译任务**。R001-ORAL-02挂起保留；任务命令已由Codex验证，不计本人操作成绩或新增掌握。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)
