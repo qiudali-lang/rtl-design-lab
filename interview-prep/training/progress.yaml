@@ -70,27 +70,27 @@
     "state": "PARKED_NOT_FAILED",
     "evidence_ref": "S-STATE"
   },
-  "next_action": "User opens this exercise folder in VS Code, saves the DUT, and runs default build task Ctrl+Shift+B; wait for actual terminal output",
+  "next_action": "Learner runs VS Code task FIFO: 编译并自检仿真 and shares actual terminal output; do not run it on behalf of the learner.",
   "next_candidate": {
     "canonical_id": "RTL-04",
     "variant_id": "RTL-04-BASE",
     "alias": "R001",
-    "operation_id": "R001-LOCAL-COMPILE01",
-    "status": "WAITING_FOR_LEARNER_LOCAL_COMPILE",
+    "operation_id": "R001-LOCAL-SIM01",
+    "status": "WAITING_FOR_LEARNER_LOCAL_SIMULATION",
     "spec_ref": "training/current_tasks.md",
     "guide_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md",
-    "actor_status": "No learner-operated run confirmed; setup checks by Codex only"
+    "actor_status": "Learner-operated DUT compilation confirmed by screenshot plus matching local result (exit 0); learner simulation not yet performed"
   },
   "git": {
     "base_commit": "c9cade730dd6d1bd238fa12184aa53a2f5e32fc6",
     "phase0_commit": "988f9bd7248e14d8d02d46cb85901bab7e10900a",
-    "last_verified_push_commit": "7ab76a07d6b1a56d2d5cfbb7c1586fad84b7cba1",
+    "last_verified_push_commit": "a2f575e18779bc41fec4231df13271b74717652d",
     "last_verified_push_branch": "main",
     "last_verified_push_result": "PASS",
     "remote_contains_phase0": true,
     "receipt_convention": "This receipt documents the previous verified push; obtain the containing/latest commit from git history."
   },
-  "updated_utc": "2026-11-03T01:17:18.649237+00:00",
+  "updated_utc": "2026-11-03T01:39:52.843224+00:00",
   "daily_budget_minutes": 150,
   "completed_questions_this_cycle": 1,
   "daily_training_policy": "Foundation + learner RTL + project deep dive, adaptive to evidence; not mechanical traversal of all 395 records. No tool/wait time counted as study.",
@@ -145,5 +145,15 @@
     "run_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/runs/03_revision02_validation/result.json",
     "code_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/sync_fifo8.sv"
   },
-  "local_environment_ready": true
+  "local_environment_ready": true,
+  "last_local_compile": {
+    "operation_id": "R001-LOCAL-COMPILE01",
+    "actor": "learner",
+    "compile_status": "PASS",
+    "compile_exit_code": 0,
+    "simulation_status": "NOT_TESTED",
+    "source_sha256": "c7b8a7c92cdc79c3f98d5f24d1b6b0ac1602fd6198af74f572d5eb5a3b8a8bee",
+    "evidence_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T013755_907090Z_compile/learner_confirmation.json",
+    "mastery_changed": false
+  }
 }

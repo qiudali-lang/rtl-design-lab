@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**R001本地工具操作：等待本人在VS Code运行编译任务**。R001-ORAL-02挂起保留；任务命令已由Codex验证，不计本人操作成绩或新增掌握。
+当前：**R001本人本地编译已通过，等待本人运行自检仿真任务**。截图与本地日志一致，编译exit 0；本次未执行功能仿真。R001-ORAL-02挂起保留，掌握状态不升级。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)

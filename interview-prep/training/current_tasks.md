@@ -1,13 +1,13 @@
-# 当前操作：R001-LOCAL-COMPILE01（本人本地编译）
+# 当前操作：R001-LOCAL-SIM01（本人本地自检仿真）
 
-2026-11-02。用户希望用本地IDE自己编译。已核本机VS Code、iverilog/vvp、GTKWave和Vivado；当前练习目录增加.vscode/tasks.json、run_local.py和本地操作说明，不改DUT/全局PATH/全局编辑器设置。
+2026-11-02。本人已在中文VS Code的FIFO练习工作区运行“FIFO: 编译DUT”。用户截图与本题现有运行日志对应，编译exit 0，PASS；这次运行simulation_status=NOT_TESTED。
 
 ## 当前只做一步
 
-在VS Code用“打开文件夹”打开本题目录，Ctrl+S保存sync_fifo8.sv，再按Ctrl+Shift+B运行默认“FIFO: 编译DUT”。查看终端输出，将结果发来。只编译通过不等于功能自检通过。
+VS Code顶部“终端→运行任务”，选择“FIFO: 编译并自检仿真”。等待终端结束后反馈实际输出；不由Codex代跑，不提前判通过。
 
-之后可用“终端→运行任务→FIFO: 编译并自检仿真”，以及“FIFO: 打开最新波形”。操作说明：`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md`。
+证据：`local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T013755_907090Z_compile/learner_confirmation.json`。原result.json的actor=unconfirmed_invoker保留，另用用户截图确认操作者，不篡改原运行日志。
 
-任务对应的编译/仿真命令已由Codex验证PASS，记录actor=assistant_setup_check；不是用户亲自操作的证据。每次运行在本题local_runs生成独立时间戳目录，保留快照/命令/日志/退出码，原验证03结果不覆盖。
+当前只确认本人工具操作的DUT编译通过，不等于独立编写TB、功能仿真、综合或上板通过。之前Codex的8组/1153周期/6915检查是既有独立记录，本次不重复计入。掌握状态仍REVIEW，无新增题目成绩或课时。
 
-用户先前R001-ORAL-02尚未回答，挂起保留：读后full降低且wr_fire随后变高，为何不能补做同一个上升沿写入？当前不并行提问、不代答、未变更掌握分数。
+R001-ORAL-02仍挂起：读后full降低且wr_fire随后变高，为何不能补做同一个上升沿写入？未回答，不判失败，不并行提问。
