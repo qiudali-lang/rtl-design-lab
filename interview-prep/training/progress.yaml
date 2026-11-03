@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "date": "2026-11-02",
-  "phase": "PHASE_1_R001_LEARNER_LOCAL_TOOL_PRACTICE",
+  "date": "2026-11-03",
+  "phase": "INTERVIEW_SPRINT_ACTIVE",
   "training_minutes": 0,
   "assessments_this_cycle": 14,
   "test_status": "PASS",
@@ -70,30 +70,31 @@
     "state": "PARKED_NOT_FAILED",
     "evidence_ref": "S-STATE"
   },
-  "next_action": "Learner opens latest waveform with VS Code task FIFO: 打开最新波形 and shares the actual GUI; wait before advancing.",
+  "next_action": "Resume only R001-WAVE-Q01 waveform interpretation, then short NBA follow-up; next project P01 AXI under sprint plan.",
   "next_candidate": {
     "canonical_id": "RTL-04",
     "variant_id": "RTL-04-BASE",
     "alias": "R001",
-    "operation_id": "R001-LOCAL-WAVE01",
-    "status": "WAITING_FOR_LEARNER_WAVEFORM_GUI",
+    "operation_id": "R001-WAVE-Q01",
+    "status": "WAITING_FOR_LEARNER_WAVEFORM_INTERPRETATION",
     "spec_ref": "training/current_tasks.md",
     "guide_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/本地编译与仿真操作.md",
-    "actor_status": "Learner compile and current self-check simulation confirmed by screenshots plus matching logs; waveform GUI not yet reviewed"
+    "actor_status": "Learner compilation and simulation confirmed; learner GTKWave opening, clock addition and DUT signal display observed in screenshots; interpretation not yet assessed",
+    "question": "used从7变8、wr_ptr从111变000的那个上升沿，数据写入mem[7]还是mem[0]？为什么？"
   },
   "git": {
     "base_commit": "c9cade730dd6d1bd238fa12184aa53a2f5e32fc6",
     "phase0_commit": "988f9bd7248e14d8d02d46cb85901bab7e10900a",
-    "last_verified_push_commit": "f926292b12d08ff0b68867a39b05b352934cb069",
+    "last_verified_push_commit": "e54333734a78a7f4b4fd87c75155367a85937f20",
     "last_verified_push_branch": "main",
     "last_verified_push_result": "PASS",
     "remote_contains_phase0": true,
     "receipt_convention": "This receipt documents the previous verified push; obtain the containing/latest commit from git history."
   },
-  "updated_utc": "2026-11-03T01:44:51.410534+00:00",
-  "daily_budget_minutes": 150,
+  "updated_utc": "2026-11-03T09:32:23.773855+00:00",
+  "daily_budget_minutes": 300,
   "completed_questions_this_cycle": 1,
-  "daily_training_policy": "Foundation + learner RTL + project deep dive, adaptive to evidence; not mechanical traversal of all 395 records. No tool/wait time counted as study.",
+  "daily_training_policy": "User-confirmed 5-6 effective hours/day until the scheduled Huawei interview; foundation + learner RTL + project deep dive + error retests; measured time only.",
   "mastery_distribution": {
     "UNASSESSED": 391,
     "REVIEW": 4
@@ -170,6 +171,43 @@
     "timescale_warning_retained": true,
     "source_sha256": "c7b8a7c92cdc79c3f98d5f24d1b6b0ac1602fd6198af74f572d5eb5a3b8a8bee",
     "evidence_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T014150_450752Z_simulate/learner_confirmation.json",
+    "mastery_changed": false
+  },
+  "daily_optional_extra_minutes": 60,
+  "confirmed_interview": {
+    "company": "Huawei/HiSilicon",
+    "target": "Turing digital IC/CPU RTL design",
+    "round": "Technical first interview per user confirmation in referenced conversation",
+    "beijing": "2026-11-13T10:30:00+08:00",
+    "america_los_angeles": "2026-11-12T18:30:00-08:00",
+    "official_invitation_or_jd_inspected": false,
+    "source": "User-provided referenced conversation, confirmed interview timing/direction; no inferred team business"
+  },
+  "sprint": {
+    "start_date": "2026-11-03",
+    "last_full_training_date": "2026-11-11",
+    "light_review_date": "2026-11-12",
+    "timezone": "America/Los_Angeles",
+    "effective_daily_minutes": [
+      300,
+      360
+    ],
+    "capacity_hours_estimate": [
+      45,
+      54
+    ],
+    "estimate_not_actual_study": true,
+    "plan_ref": "training/current_plan.md",
+    "source_count": 40,
+    "source_count_not_interview_count": true,
+    "assessment_reset": false
+  },
+  "local_waveform_observation": {
+    "gui_opened": true,
+    "learner_added_clock_and_dut_signals": true,
+    "full_range_zoom_observed": true,
+    "waveform_interpretation": "NOT_ASSESSED",
+    "evidence_ref": "local://legacy/06_RTL手撕题_原题与训练记录/RTL-04/20261102_V2独立诊断/local_runs/20261103T014150_450752Z_simulate/waveform_observation.json",
     "mastery_changed": false
   }
 }

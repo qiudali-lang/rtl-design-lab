@@ -1,6 +1,6 @@
 # 数字IC/CPU秋招训练入口 · V2.0
 
-当前：**R001本人本地编译及自检仿真已通过，下一步打开最新波形**。截图与本次日志一致，8组/1153周期/6915检查，保留timescale提示。R001-ORAL-02挂起保留，掌握状态不升级。
+当前：**11/13北京时间10:30华为面试冲刺，用户确认每天5–6小时**。执行[当前计划](training/current_plan.md)；当前只等R001-WAVE-Q01波形解释，既有GUI截图/编译/仿真证据保留，掌握不升级。
 
 - [覆盖报告/实际数量](inventory/coverage_report.md)
 - [来源清单](inventory/source_inventory.md) · [机器索引](inventory/catalog.json)
